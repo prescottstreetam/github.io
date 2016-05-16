@@ -1,8 +1,3736 @@
-<html>
-<head>
-	<title>Prescott Street Asset Management</title>
-</head>
-<body>
-	<h3>This is our beautiful website yo</h3>
-</body>
-</html>
+
+<!DOCTYPE html>
+<html lang="en" style="margin-top:0 !important;">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="http://www.racap.com/wp-content/themes/racap/img/home-favicon.ico">
+        <title>RA Capital Management</title>
+
+        <!-- Bootstrap -->
+        <link href="http://www.racap.com/wp-content/themes/racap/style.css" rel="stylesheet">
+
+
+        <!-- Script files -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://www.racap.com/wp-content/themes/racap/js/bootstrap.min.js"></script>
+        <script src="http://www.racap.com/wp-content/themes/racap/js/modernizr-2.7.1.min.js"></script>
+
+
+        <!-- tabs script -->
+        <script type="text/javascript">
+            if (typeof Muse == "undefined")
+                window.Muse = {};
+            window.Muse.assets = {
+                "required": ["museutils.js", "jquery.musepolyfill.bgsize.js", "jquery.scrolleffects.js", "jquery.watch.js",
+                    "webpro.js", "musewpslideshow.js", "jquery.museoverlay.js", "touchswipe.js", "musewpdisclosure.js", "index.css"
+                ],
+                "outOfDate": []
+            };
+        </script>
+        <script type="text/javascript">
+            jQuery(document).ready(function ($) {
+                if (navigator.userAgent.match(/(iPod|iPhone|iPad)/i)) {
+                    //jQuery('body').addClass('browserios');
+                }
+                ;
+
+                function orient() {
+                    if (window.orientation == 0 || window.orientation == 180) {
+                        $("body").addClass("class", "portrait");
+                        orientation = 'portrait';
+                        jQuery('body').addClass('browserios');
+                       
+
+                        return false;
+                    }
+                    else if (window.orientation == 90 || window.orientation == -90) {
+                        $("body").addClass("class", "portrait");
+                        orientation = 'landscape';
+                        jQuery('body').addClass('browserios');
+
+                        return false;
+                    }
+                }
+
+                /* Call orientation function on page load */
+                $(function () {
+                    orient();
+                });
+
+                /* Call orientation function on orientation change */
+                $(window).bind('orientationchange', function (e) {
+                    orient();
+                });
+
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+
+
+
+                $('#menu-main-menu li a, #menu-main-menu-11 a,#menu-ipad li a, #advanced_menu-3 ul li a, a.move_to_top').click(function (event) {
+		
+                    if ($(window).width() <= 480) {
+                        var targetOffset = $($(this).attr('href')).offset().top;
+                    }
+                    else {
+						
+                        var targetOffset = $($(this).attr('href')).offset().top - 120;
+                    }
+                    $('html, body').animate({
+                        scrollTop: targetOffset
+                    }, 500);
+                    return false;
+                });
+
+                $('#menu-toggle').click(function () {
+                    $('#menu-ipad').toggleClass('dropdown');
+
+                });
+            });
+
+            $(window).scroll(function () {
+                // var currentScroll = $(this).scrollTop();
+
+                $('.left-box-section.transition-effect-leftbox').each(function () {
+                    var eTop = $(this).offset().top;
+                    var eHeight = eTop - $(window).scrollTop();
+                    //var percent = ($(document).scrollTop() / ($(window).height()));
+
+                    if (eHeight < 380) {
+                        var eOpacity = $(this).css('opacity');
+                        var a = Math.round(eOpacity * 10) / 10;
+
+                        var new_eOpacity = a + 0.3;
+                        $(this).css('opacity', new_eOpacity);
+                    }
+                    if (eHeight > 380) {
+                        var eOpacity = $(this).css('opacity');
+                        var a = Math.round(eOpacity * 10) / 10;
+
+                        var new_eOpacity = a - 0.3;
+                        $(this).css('opacity', new_eOpacity);
+                    }
+
+                });
+            });
+
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $("#slide-1").css('min-height', $(window).height());
+
+                $(window).resize(function () {
+                    $("#slide-1").css('min-height', $(window).height());
+                });
+                /*
+                 $("#slide-2").css('min-height',$(window).height());
+                 // $(".left-box-section.transition-effect-leftbox").css('min-height',($(window).height() -147);
+          
+                 $(window).resize(function(){
+                 $("#slide-2").css('min-height',$(window).height());
+                 });
+                 $("#slide-section-about").css('min-height',$(window).height());
+          
+                 $(window).resize(function(){
+                 $("#slide-section-about").css('min-height',$(window).height());
+                 });
+                 $("#slide-4").css('min-height',$(window).height());
+          
+                 $(window).resize(function(){
+                 $("#slide-4").css('min-height',$(window).height());
+                 });
+                 $("#slide-5").css('min-height',$(window).height());
+          
+                 $(window).resize(function(){
+                 $("#slide-5").css('min-height',$(window).height());
+                 });
+                 $("#slide-6").css('min-height',$(window).height());
+          
+                 $(window).resize(function(){
+                 $("#slide-6").css('min-height',$(window).height());
+                 });
+                 $("#slide-7").css('min-height',$(window).height());
+          
+                 $(window).resize(function(){
+                 $("#slide-7").css('min-height',$(window).height());
+                 });
+                 $("#slide-8").css('min-height',$(window).height());
+          
+                 $(window).resize(function(){
+                 $("#slide-8").css('min-height',$(window).height());
+                 });
+                 $("#slide-9").css('min-height',$(window).height());
+          
+                 $(window).resize(function(){
+                 $("#slide-9").css('min-height',$(window).height());
+                 });
+                 $("#slide-10").css('min-height',$(window).height());
+          
+                 $(window).resize(function(){
+                 $("#slide-10").css('min-height',$(window).height());
+                 });
+                 $("#section-outreach").css('min-height',$(window).height());
+          
+                 $(window).resize(function(){
+                 $("#section-outreach").css('min-height',$(window).height());
+                 });
+                 */
+            });
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                //var offset_container=($("#top_page .container").offset().left)+35;
+                //$("#navigation").css('left',offset_container);
+
+                var navigation_li = $(".right-box-section_1 ul.menu_1 li");
+
+
+                $('.grey-arrow').click(function (e) {
+                    e.preventDefault();
+                    var href = $(this).attr('href');
+                    $('html, body').animate({
+                        scrollTop: $(href).offset().top - 60
+                    }, 500);
+                });
+
+                /*scroll function*/
+
+                $(document).scroll(function () {
+
+                    var scroll_top = ($(window).scrollTop());
+                    var section_offset_top_1 = ($("#slide-2").offset().top);
+                    var section_offset_top_2 = ($("#slide-4").offset().top);
+                    var section_offset_top_3 = ($("#slide-6").offset().top);
+                    var section_offset_top_4 = ($("#slide-6").offset().top);
+                    var section_offset_top_5 = ($("#slide-8").offset().top);
+                    var section_offset_top_6 = ($("#slide-10").offset().top);
+
+                    if (scroll_top >= section_offset_top_1 - 60)
+                    {
+                        $(navigation_li).removeClass('active');
+                        $(navigation_li[0]).addClass('active');
+                    }
+                    if (scroll_top >= section_offset_top_2 - 60)
+                    {
+                        $(navigation_li).removeClass('active');
+                        $(navigation_li[1]).addClass('active');
+                    }
+                    /*if(scroll_top >= section_offset_top_3)
+                     {
+                     $(navigation_li).removeClass('active');
+                     $(navigation_li[2]).addClass('active');    
+                     }*/
+                    if (scroll_top >= section_offset_top_4 - 60)
+                    {
+                        $(navigation_li).removeClass('active');
+                        $(navigation_li[3]).addClass('active');
+                    }
+                    if (scroll_top >= section_offset_top_5 - 60)
+                    {
+                        $(navigation_li).removeClass('active');
+                        $(navigation_li[4]).addClass('active');
+                    }
+                    if (scroll_top >= section_offset_top_6 - 60)
+                    {
+                        $(navigation_li).removeClass('active');
+                        $(navigation_li[5]).addClass('active');
+                    }
+
+
+                });
+
+
+
+            });
+        </script>
+        <script src="http://www.racap.com/wp-content/themes/racap/js/index-tab.js"></script>
+        <script src="http://www.racap.com/wp-content/themes/racap/js/jquery-tab.js"></script>
+        <style>
+            .slide-2-bg-overlay{
+                height:100%;
+                width:100%;
+                background:url(http://www.racap.com/wp-content/themes/racap/img/slide-4-bg-overlay.png) top left repeat;
+            }
+		main {
+			overflow-x:hidden;
+			
+		}
+        </style>
+		
+
+        <title>RA Capital Management</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v3.2.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="EVIDENCE-BASED INVESTING IN HEALTHCARE &amp; LIFE SCIENCES. RA Capital Management, LLC (&quot;RA Capital&quot;) is a crossover fund manager dedicated to evidence-based investing in public and private healthcare and life science companies that are developing drugs, medical devices, and diagnostics"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="http://www.racap.com/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="RA Capital Management" />
+<meta property="og:description" content="EVIDENCE-BASED INVESTING IN HEALTHCARE &amp; LIFE SCIENCES. RA Capital Management, LLC (&quot;RA Capital&quot;) is a crossover fund manager dedicated to evidence-based investing in public and private healthcare and life science companies that are developing drugs, medical devices, and diagnostics" />
+<meta property="og:url" content="http://www.racap.com/" />
+<meta property="og:site_name" content="Racapital" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"http:\/\/www.racap.com\/","name":"Racapital","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.racap.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<meta name="google-site-verification" content="HwlU4Ju4x7Bfupc4UrCLmfCLJVVl0DuORmwQiMXynz0" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Racapital &raquo; Feed" href="http://www.racap.com/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.racap.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.5.2"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='twentyfifteen-fonts-css'  href='//fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='http://www.racap.com/wp-content/themes/racap/genericons/genericons.css?ver=3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyfifteen-style-css'  href='http://www.racap.com/wp-content/themes/racap/style.css?ver=4.5.2' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfifteen-ie-css'  href='http://www.racap.com/wp-content/themes/racap/css/ie.css?ver=20141010' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentyfifteen-ie7-css'  href='http://www.racap.com/wp-content/themes/racap/css/ie7.css?ver=20141010' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='ms-main-css'  href='http://www.racap.com/wp-content/plugins/masterslider/public/assets/css/masterslider.main.css?ver=2.17.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ms-custom-css'  href='http://www.racap.com/wp-content/uploads/masterslider/custom.css?ver=44' type='text/css' media='all' />
+<link rel='stylesheet' id='cyclone-template-style-dark-0-css'  href='http://www.racap.com/wp-content/plugins/cyclone-slider-2/templates/dark/style.css?ver=2.11.0' type='text/css' media='all' />
+<link rel='stylesheet' id='cyclone-template-style-default-0-css'  href='http://www.racap.com/wp-content/plugins/cyclone-slider-2/templates/default/style.css?ver=2.11.0' type='text/css' media='all' />
+<link rel='stylesheet' id='cyclone-template-style-standard-0-css'  href='http://www.racap.com/wp-content/plugins/cyclone-slider-2/templates/standard/style.css?ver=2.11.0' type='text/css' media='all' />
+<link rel='stylesheet' id='cyclone-template-style-thumbnails-0-css'  href='http://www.racap.com/wp-content/plugins/cyclone-slider-2/templates/thumbnails/style.css?ver=2.11.0' type='text/css' media='all' />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v5.5 - Universal enabled - https://www.monsterinsights.com/ -->
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-54979515-3', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('send','pageview');
+
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<script type='text/javascript' src='http://www.racap.com/wp-includes/js/jquery/jquery.js?ver=1.12.3'></script>
+<script type='text/javascript' src='http://www.racap.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.0'></script>
+<link rel='https://api.w.org/' href='http://www.racap.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.racap.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.racap.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='http://www.racap.com/' />
+<link rel="alternate" type="application/json+oembed" href="http://www.racap.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.racap.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.racap.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.racap.com%2F&#038;format=xml" />
+<script>var ms_grabbing_curosr='http://www.racap.com/wp-content/plugins/masterslider/public/assets/css/common/grabbing.cur',ms_grab_curosr='http://www.racap.com/wp-content/plugins/masterslider/public/assets/css/common/grab.cur';</script>
+<meta name="generator" content="MasterSlider 2.17.0 - Responsive Touch Image Slider" />
+<script>
+var masterSlider_SlideEventChange = 0;
+var masterSlider_cardiovascular = 0;
+var masterSlider_digestive = 0;
+var masterSlider_gene = 0;
+var masterSlider_immune = 0;
+var masterSlider_infectious = 0;
+var masterSlider_metabolic = 0;
+var masterSlider_nervous = 0;
+var masterSlider_ocular = 0;
+var masterSlider_oncocap = 0;
+var masterSlider_oncohema = 0;
+var masterSlider_oncosolid = 0;
+var masterSlider_orphan = 0;
+var masterSlider_renal = 0;
+var masterSlider_reproductive = 0;
+var masterSlider_respiratory = 0;
+var masterSlider_strategy = 0;
+</script>
+    </head>
+
+    <body>
+
+
+
+        <main>
+
+
+
+<link rel="stylesheet" href="http://www.racap.com/wp-content/themes/racap/css/about-accordian.css">
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+
+
+        $('.selectField').change(function () {
+
+            var id = $(this).val();
+
+            var selectbox = $(this).attr('id');
+
+            $('.' + selectbox).css('display', 'none');
+
+            $('#' + id).css('display', 'block');
+
+        });
+
+
+
+        $('.close-menu-btn').click(function () {
+
+            $('#menu-ipad').removeClass('open');
+
+
+
+        });
+
+
+
+        $('#outreach .general-btn').click(function (e) {
+            $('#outreach .outreach-tabs').removeClass('active');
+            $('#outreach .general-btn').removeClass('active');
+            href = $(this).attr('id');
+            if (href == 'general-content' || $('.publication-content').hasClass('agreed')) {
+                $('#outreach .' + href).addClass('active');
+            }
+            $(this).addClass('active');
+        });
+        $('#disagree, .closepop').click(function (e) {
+            e.preventDefault();
+            $.colorbox.close();
+            $('#outreach .outreach-tabs').removeClass('active');
+            $('#outreach .general-btn').removeClass('active');
+            $('.general-content').addClass('active');
+            $('#general-content').addClass('active');
+        });
+
+        $('#agree').click(function (e) {
+            e.preventDefault();
+            $.colorbox.remove();
+            $('.publication-content').addClass('agreed');
+            $('.publication-content').addClass('active');
+        });
+
+        $("#publication-content").colorbox({
+            inline: true,
+			fixed: true,
+            maxWidth: 800,
+			width:'95%',
+            maxHeight: 600,
+			height:'95%',
+            overlayClose: false,
+            escKey: false,
+        });
+
+
+        $(window).resize(function () {
+			if($('#colorbox').length) {
+				$.colorbox.resize({
+					width: '95%',
+				});
+			}
+			var wh = $(window).height();
+			$('#popup_content').css('max-height',wh+'px');
+        });
+
+	//link of translation and hunting
+	
+	
+    });
+	
+	
+
+</script>
+
+
+
+<style>
+    .feature-inner-part3 {
+        padding-bottom:20px;
+    }
+    .selected{
+        background: rgb(0, 40, 59);
+    }
+    .selected p{
+        color: #fff;
+    }
+    #secoond-footer {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00283b+0,00283b+82,303e44+100 */
+        background: #00283b; /* Old browsers */
+        background: -moz-linear-gradient(top,  #00283b 0%, #00283b 82%, #303e44 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00283b), color-stop(82%,#00283b), color-stop(100%,#303e44)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #00283b 0%,#00283b 82%,#303e44 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #00283b 0%,#00283b 82%,#303e44 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #00283b 0%,#00283b 82%,#303e44 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #00283b 0%,#00283b 82%,#303e44 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00283b', endColorstr='#303e44',GradientType=0 ); /* IE6-9 */
+
+    }
+    #u42071-10 {
+        background-color: #fff;
+        left: 21px;
+        margin-top: 25px;
+        min-height: 666px;
+        padding: 19px;
+        position: relative;
+        right: 21px;
+        width: 299px;
+        z-index: 722;
+    }
+    #pu4558.PamphletThumbSelected #u4559-4 {
+        left: auto !important;
+        margin-right: auto !important;
+        width:100% !important;
+    }
+    #punew21 {
+        left: -6px;
+        position: absolute;
+        top: 690px;
+        width: 0.01px;
+    }
+    #u4596 {
+        height:771px;
+    }
+    #unew-text31 {
+        font-family: raleway,sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        line-height: 19px;
+    }
+    #unew031 {
+        background:rgba(0, 40, 59, 0.9) url("http://3wnc2m1csnw1hrzen3zztgx1.wpengine.netdna-cdn.com/wp-content/themes/racap/img/sequoia_web_bw-u1547-fr.png") no-repeat scroll center center;
+        border-color: #999999;
+        height: 716px;
+        position: relative;
+        width: 341px !important;
+        z-index: 798;
+    }
+    #unew-text41 {
+        font-family: raleway,sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 14px;
+    }
+    #unew21 {
+        background-color: #ffffff;
+        border-color: #ffffff;
+        margin-left: 1px;
+        margin-top: 1px;
+        min-height: 51px;
+        padding: 8px 0;
+        position: absolute;
+        width: 241px;
+    }
+    #unew21-6 {
+        left: 5px;
+        margin-top: 0;
+        position: relative;
+        width: 234px;
+    }
+    .grey-arrow {
+        bottom: 50%;
+        left: 65%;
+        margin-left: -25px;
+        position: absolute;
+        opacity:.7 !important;
+    }
+    .grey-arrow:hover {
+        opacity:1 !important;
+    }
+    #slide-8 {
+        position:relative;
+    }
+    #slide-1 .bcg 
+
+    {
+
+        background-image:url('http://www.racap.com/wp-content/uploads/2015/03/slide-1.png');
+
+        background-position: 0px 0%;
+
+    }
+
+
+
+    #slide-2 .bcg{
+
+
+
+        background-image:url('http://www.racap.com/wp-content/uploads/2015/03/yellowstone_web_bw.jpg');
+
+        background-position: 0px 0%;
+
+    }
+    @media (max-width:960px){
+        .grey-arrow {
+            display:none;
+        }
+    }
+    @media (max-width:1024px){
+
+        .browserios .slide-1-bg-overlay {
+
+            background: url('http://www.racap.com/wp-content/uploads/2015/03/slide-1.png')no-repeat;
+
+            height: 100%;
+
+            background-size:cover!important;
+
+        }
+
+        .browserios .slide-2-bg-overlay {
+
+            background: url('http://www.racap.com/wp-content/uploads/2015/03/yellowstone_web_bw.jpg')no-repeat;
+
+            height: 100%;
+
+        }
+
+
+
+        .browserios .bcg {
+
+            background-image: none!important;
+
+        }
+
+
+
+        .browserios .slide-4-bg-overlay {
+
+            background: url('http://www.racap.com/wp-content/uploads/2015/03/sequoia_web_bw.jpg');
+
+        }
+
+        .browserios .slide-6-bg-overlay {
+
+            background: url('http://www.racap.com/wp-content/uploads/2015/03/arches_web_bw.jpg');
+
+        }
+
+        .browserios .slide-8-bg-overlay {
+
+            background: url('http://www.racap.com.php53-13.dfw1-1.websitetestlink.com/wp-content/themes/racap/img/map-bw%20copy.jpg')no-repeat;
+
+        }
+
+        .browserios .slide-10-bg-overlay {
+
+            background: url('http://www.racap.com/wp-content/uploads/2015/03/everglades_web_bw.jpg')no-repeat;
+
+        }
+
+    }
+
+    #slide-4 .bcg 
+
+    {
+
+        background-image:url('http://www.racap.com/wp-content/uploads/2015/03/sequoia_web_bw.jpg');
+
+        background-position: 0px 0%;
+
+    }
+
+
+
+    #slide-6 .bcg 
+
+    {
+
+        background-image:url('http://www.racap.com/wp-content/uploads/2015/03/arches_web_bw.jpg');
+
+        background-position: 0px 0%;
+
+
+
+    }
+
+    #slide-10 .bcg 
+
+    {
+
+        background-image:url('http://www.racap.com/wp-content/uploads/2015/03/everglades_web_bw.jpg');
+
+        background-position: 0px 0%;
+
+    }
+
+</style>
+
+
+
+<div class="toggle-desktop-fixed">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-xs-12">
+
+
+
+                <div class="toggle-menu-desktop">
+
+
+
+                    <div class="col-md-4 col-sm-5 col-xs-12">
+
+                        <div class="logo_1">
+
+                            <a href="http://www.racap.com"><aside id="widget_sp_image-2" class="widget widget_sp_image"><a href="/" id="" target="_self" class="widget_sp_image-image-link" title="" rel=""><img alt="" class="attachment-0x0" style="max-width: 100%;" src="http://www.racap.com/wp-content/uploads/2015/09/racap-new-logo.png" /></a></aside></a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="col-md-8 col-sm-7 col-xs-12">
+
+                        <div class="right-box-section_1">
+
+
+
+                            <div class="menu-main-menu-container">
+
+                                <!--ul id="menu-main-menu" class="menu_1">
+                                
+                                <li class="active"><a href="#slide-2">ABOUT US</a></li>
+                                
+                                <li><a href="#slide-4">TEAM</a></li>
+                                
+                                <li><a href="#slide-6">PORTFOLIO</a></li>
+                                
+                                <li><a href="#slide-8">CONTACT</a></li>
+                                
+                                <li><a href="#slide-10">OUTREACH</a></li>
+                                
+                                </ul-->
+
+
+
+                                <div class="menu-main-menu-container"><ul id="menu-main-menu-11" class="menu_1"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="#about">ABOUT US</a></li>
+<li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8"><a href="#team">TEAM</a></li>
+<li id="menu-item-282" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-282"><a href="/techatlas">TECH<strong>ATLAS</strong></a></li>
+<li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="#venture">VENTURE</a></li>
+<li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="#contact">CONTACT</a></li>
+<li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="#outreach">OUTREACH</a></li>
+</ul></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="toggle-fixed">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-xs-12">
+
+
+
+                <div class="toggle-menu-ipad">
+
+
+
+
+
+                    <div class="logo">
+
+                        <a href="http://www.racap.com"><img src="http://www.racap.com/wp-content/themes/racap/img/racap_1_notag_white.png"></a>
+
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="header">
+
+                        <a href="javascript:void(0)" class="open-menu-btn" id="menu-toggle">Menu</a>
+
+                        <div id ="menu-ipad" class="nav_ipad">
+
+                            <a class="close-menu-btn" href="javascript:void(0);">×</a>
+
+                            <!--ul id="menu-main-menu-1">
+
+                                <li><a href="#slide-2">ABOUT US</a></li>
+
+                                <li><a href="#slide-4">TEAM</a></li>
+
+                                <li class="ipad-cross-over"><a href="#slide-6"><small>CROSS-OVER</small><br>PORTFOLIO</a></li>
+
+                                <li><a href="#slide-8">CONTACT</a></li>
+
+                                <li><a href="#slide-10">OURTEACH</a></li>
+
+                            </ul-->
+
+                            <div class="menu-main-menu-container"><ul id="menu-main-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="#about">ABOUT US</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8"><a href="#team">TEAM</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-282"><a href="/techatlas">TECH<strong>ATLAS</strong></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="#venture">VENTURE</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="#contact">CONTACT</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="#outreach">OUTREACH</a></li>
+</ul></div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<section id="slide-1" class="homeSlide">
+
+    <div class="bcg">
+
+        <div class="slide-1-bg-overlay">
+                <!--a class="grey-arrow" href="#slide-2"><img src="/img/down-grey.png" /></a-->
+
+
+            <div class="feature-inner-part">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 feature-inner">
+                            <div class="feature-inner-conent">
+                                <h1>EVIDENCE-BASED INVESTING IN HEALTHCARE &amp; LIFE SCIENCES.</h1>
+<p>RA Capital Management, LLC (&#8220;RA Capital&#8221;) is a crossover fund manager dedicated to evidence-based investing in public and private healthcare and life science companies that are developing drugs, medical devices, and diagnostics.</p>
+
+                                <a class="grey-arrow" href="#slide-2"><img src="http://www.racap.com/wp-content/themes/racap/img/down-grey.png" /></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="transform-text">
+
+                        <p>DENALI</p><small>NATIONAL PARK & RESERVE</small><span>ALASKA</span>                    </div>
+                </div>
+
+            </div>
+
+
+            <!--div class="container">
+    
+                <div class="row">
+    
+                    <div class="col-md-4 col-sm-5 col-xs-12">
+    
+                        <div class="left-box-section">
+    
+                            <a href="/#slide-1"><img src="/img/racap_1_notag_white.png"></a>
+    
+                
+                        </div>
+    
+                    </div>
+    
+    
+    
+                    <div class="col-md-8 col-sm-7 col-xs-12">
+    
+                        <div class="right-box-section">
+    
+    
+    
+                
+    
+    
+                        </div>
+    
+                    </div>
+    
+    
+    
+                </div>
+    
+            </div>
+    
+     </div>
+    
+            <!--div class="transform-text">
+    
+                
+            </div-->
+
+
+
+        </div>
+
+</section>
+
+
+
+<div class="slider-strip"></div>
+
+<section id="slide-2" class="homeSlide">
+        <!--a class="grey-arrow" href="#about"><img src="/img/down-grey.png" /></a-->
+    <div class="bcg">
+
+        <div class="slide-2-bg-overlay">
+
+
+            <div class="feature-inner-part2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 feature-inner2">
+                            <div class="feature-inner-conent2">
+                                <h1>"THERE IS SO MUCH LEFT TO DISCOVER." </h1>
+                                <span>PETER KOLCHINSKY, </span>
+                                <p>MANAGING DIRECTOR & PORTFOLIO  MANAGER</p>
+
+                                <a class="grey-arrow" href="#about"><img src="http://www.racap.com/wp-content/themes/racap/img/down-grey.png" /></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="transform-text">
+
+                        <p>YELLOWSTONE</p><small>NATIONAL PARK</small><span>IDAHO, MONTANA, WYOMING</span>
+                    </div>
+                </div>
+
+            </div>	
+
+
+
+
+            <!--div class="container">
+
+                <div class="row">
+
+
+
+                    <div class="col-md-4 col-sm-5 col-xs-12">
+
+                        <div class="left-box-section transition-effect-leftbox">
+
+                            <h1></h1>
+
+                            <span></span>
+
+                            <small></small>
+
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <div class="bottom-box-slide2">
+
+                            <a href="#slide-1"><img src="/img/racap_1_notag_white.png"></a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-8 col-sm-7 col-xs-12">
+
+                        <div class="right-box-section">
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div-->
+
+
+
+            <!--div class="transform-text">
+
+            
+            </div-->
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<div class="slider-strip"></div>
+
+<section id="about" class="">
+
+    <div class="bcg">
+
+        <div class="container position_1">
+
+            <div class="row">
+
+
+
+                <div class="col-md-4 col-sm-5 col-xs-12 about-us-left-content">
+
+                    <div class="left-box-section">
+
+                        <h1>ABOUT US</h1>
+
+                        <p>RA Capital Management, LLC (&#8220;RA Capital&#8221;) is a crossover fund manager dedicated to evidence-based investing in public and private healthcare and life science companies that are developing drugs, medical devices, and diagnostics.</p>
+
+                        <a class="move_to_top" href="#slide-1"><small>TOP<img src="http://www.racap.com/wp-content/themes/racap/img/arrow-grey.png"></small></a>
+
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <div class="bottom-box-slide3">
+
+                        <h1>OUR VALUES:</h1>
+
+                    </div>
+
+                    <div class="col-md-12 col-sm-7 col-xs-12 testimonial">		
+
+                        <div class="clearfix" id="page">
+
+                            <!-- none box -->
+
+
+
+                            <div tabindex="0" class="cycloneslider cycloneslider-template-standard cycloneslider-width-responsive" id="cycloneslider-our-values-1" style="max-width:603px" > <div class="cycloneslider-slides cycle-slideshow" data-cycle-allow-wrap="true" data-cycle-dynamic-height="off" data-cycle-auto-height="603:105" data-cycle-auto-height-easing="null" data-cycle-auto-height-speed="250" data-cycle-delay="0" data-cycle-easing="" data-cycle-fx="fadeout" data-cycle-hide-non-active="true" data-cycle-log="false" data-cycle-next="#cycloneslider-our-values-1 .cycloneslider-next" data-cycle-pager="#cycloneslider-our-values-1 .cycloneslider-pager" data-cycle-pause-on-hover="true" data-cycle-prev="#cycloneslider-our-values-1 .cycloneslider-prev" data-cycle-slides="&gt; div" data-cycle-speed="1000" data-cycle-swipe="false" data-cycle-tile-count="7" data-cycle-tile-delay="100" data-cycle-tile-vertical="true" data-cycle-timeout="4000" > <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p><p class="Values-Large" id="u3748-2">WE ORIGINATE CONVICTION</p> <p class="Values-Small" id="u3748-4">WE DO NOT BORROW IT FROM OTHERS</p></p> </blockquote> </div> <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p><p class="Values-Small" id="u3746-2">WE EXPECT AND STRIVE TO</p> <p class="Values-Large" id="u3746-4">INSPIRE THE BEST IN EVERYONE</p></p> </blockquote> </div> <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p><br></br><p class="Values-Large" id="u3748-2">WE EMBRACE THE UNFAMILIAR </p></p> </blockquote> </div> <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p><p class="Values-Large" id="u3748-2">WE DO NOT LET CONVENTION <br>STAND IN THE WAY OF WHAT IS RIGHT</p></p> </blockquote> </div> <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p><br></br><p class="Values-Large" id="u3748-2">WE LEARN COLLABORATIVELY</p></p> </blockquote> </div> <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p><p class="Values-Large" id="u3748-2">WE ARE DATA-DRIVEN <br>AND CHALLENGE ASSUMPTIONS</p></p> </blockquote> </div> <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p> <p class="Values-Large" id="u3959-2">WE ARE PERSISTENTLY CURIOUS</p> <p class="Values-Small" id="u3959-4">AND HUMBLED BY WHAT IS LEFT TO LEARN</p></p> </blockquote> </div> <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p><p class="Values-Large" id="u3748-2">WE ADMIT OUR MISTAKES <br>AND SHARE LESSONS LEARNED</p></p> </blockquote> </div> <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p><br></br><p class="Values-Large" id="u3748-2">WE HAVE A BIAS FOR ACTION</p></p> </blockquote> </div> <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p><br></br><p class="Values-Large" id="u3748-2">WE ADDRESS THE <br>ELEPHANT IN THE ROOM</p></p> </blockquote> </div> <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p><p class="Values-Large" id="u3748-2">WE VALUE OUR RELATIONSHIPS AND ARE <p class="Values-Small" id="u3959-4">POSITIVE, RESPECTFUL, AND OPEN-MINDED </p></p> </blockquote> </div> <div class="cycloneslider-slide cycloneslider-slide-testimonial" > <blockquote> <p><br></br><p class="Values-Large" id="u3966-2">WE TAKE FUN SERIOUSLY</p></p> </blockquote> </div> </div> <div class="cycloneslider-pager"></div> <a href="#" class="cycloneslider-prev"> <span class="arrow"></span> </a> <a href="#" class="cycloneslider-next"> <span class="arrow"></span> </a> </div>
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="col-md-8 col-sm-7 col-xs-12">
+
+                    <div class="right-box-section">
+
+                        
+
+
+                        <div class="bottom-box-slide3">
+
+                            <h1>OUR VALUES:</h1>
+
+                        </div>
+
+
+                        <div class="about-us-accordion">
+                            <ul class="tabs">
+                                <li class="active" rel="tab1">OVERVIEW</li>
+                                <li rel="tab2">BEYOND CAPITAL</li>
+                                <li rel="tab3">TRANSLATION & HUNTING</li>
+                            </ul>
+
+                            <div class="tab_container">
+                                <h3 class="d_active tab_drawer_heading" rel="tab1">Tab 1</h3>
+                                <div id="tab1" class="tab_content">
+                                    <h2>WHO WE ARE</h2>
+                                    <p id="u6874-4" style="text-align: left;">RA Capital Management, LLC (“RA Capital”) is a crossover fund manager dedicated to evidence-based investing in public and private healthcare and life science companies that are developing drugs, medical devices, and diagnostics. The flexibility of its strategy allows RA Capital to lead private, IPO, and follow-on financings for its portfolio companies, both facilitating the crossover process and allowing management teams to drive value creation with fewer capital concerns from inception through commercialization.</p>
+<p id="u6874-6">At RA Capital’s core is its TechAtlas research division, a scientifically trained team that maps out competitive landscapes in a continual effort to put data into context, identify breakthroughs, and originate conviction in new ideas. TechAtlas provides RA Capital’s investment team and portfolio companies (see Beyond Capital) with strategic intelligence, market research, and other resources. The team’s understanding of industry best practices is derived from an extensive collection of case studies documenting the impact of clinical trial design, partnership structures, public market dynamics, and many other factors on valuation and business viability.</p>
+<p id="u6874-8">RA Capital offers an Executive-in-Residence (EIR) program for experienced professionals seeking thought partners and a platform from which to survey diverse competitive landscapes in search of worthy projects, though we also have other models for collaborating with experienced “drug hunters” (see Translation and Hunting).</p>
+
+
+                                </div>
+                                <!-- #tab1 -->
+                                <h3 class="tab_drawer_heading" rel="tab2">Tab 2</h3>
+                                <div id="tab2" class="tab_content">
+                                    <h2>BEYOND CAPITAL</h2>
+                                    <small>IN ADDITION TO CAPITAL, RA CAPITAL INVESTS CONSIDERABLE TIME AND RESOURCES INTO HELPING ITS PRIVATE AND PUBLIC PORTFOLIO COMPANIES SUCCEED.</small>
+                                    <div class="about-left-tab">
+                                        <p>We leverage our TechAtlas platform to identify potential indications that our portfolio companies may not have considered pursuing, potential partners and acquirers (to whom we make introductions), as well as complementary drug candidates and technologies for in-licensing consideration.</p>
+<p>Members of our Investment Team take board and/or observer seats when appropriate. We also host board meetings at our offices from time to time, providing access to maps to facilitate strategy discussions.</p>
+<p>We help identify candidates for key executive positions at portfolio companies.</p>
+<p>Portfolio companies are welcome to explore our maps with us; in certain cases, we may license one or more maps to them.</p>
+
+
+                                    </div>
+
+
+                                    <div class="about-right-tab">
+                                        <p>When appropriate, our team can create a custom map that comprehensively aggregates and organizes R&amp;D opportunities as well as competitive and complementary technologies in those indications.</p>
+<p>Portfolio companies have access to the TechAtlas team’s primary scientific and market research; we interview clinicians and KOLs, host Advisory Boards, and attend many academic conferences.</p>
+<p>Our literature surveillance team flags discoveries that may be important to portfolio companies.</p>
+<p>Our graphics design team helps portfolio companies communicate complex concepts with high quality graphics for their slides and websites, sometimes incorporating TechAtlas map elements.</p>
+<p>Our communications team can offer assistance with grant writing and preparation of scientific publications.</p>
+
+
+                                    </div>
+
+
+
+                                </div>
+                                <!-- #tab2 -->
+                                <h3 class="tab_drawer_heading" rel="tab3">Tab 3</h3>
+                                <div id="tab3" class="tab_content">
+                                    <h2>TRANSLATION & HUNTING</h2>
+                                    <small>WE ARE INTERESTED IN BOTH THE NOVEL AND THE RE-IMAGINED.</small>
+                                    <div class="about-left-tab">
+                                        <p>Discoveries and improvements in chemistry, molecular and cell biology, and material science create novel capabilities that open up new possibilities for tackling previously unsolved challenges.</p>
+<p>The rules by which we understand biology are also constantly being defined and revised, revealing new applications for existing technologies and partially-developed drug candidates. Programs we consider worthwhile may form the basis for a new venture.</p>
+<p>RA Capital’s TechAtlas platform is designed to systematize the translation of novel science and technology into optimal commercial applications, which both helps our portfolio companies with their pipeline prioritization as well as generates ideas for new venture formation.</p>
+<p>In those areas that we have mapped, it typically takes us a few hours to go from a mechanism-inspired idea for treating a disease to knowing the companies that might have relevant clinical and preclinical assets to license, the companies from whom a candidate could be commissioned, trial designs and endpoints, competing and complementary agents, current and future standard of care, market size, comparable pricing, financing strategy, and potential acquirers, all meant to enable a thoughtful first-pass assessment of whether an idea could be worth a much deeper assessment.</p>
+
+
+                                    </div> 
+
+
+                                    <div class="about-right-tab">
+                                        <p>The size and efficiency of our team allows us to parallelize the first-pass assessment of many ideas sourced from literature, technology transfer offices, pipelines of large pharma as well as small biotechnology companies, as well as discussions with academic researchers and clinicians.</p>
+<p>We welcome experienced drug hunters searching for technologies/candidates and looking to start new companies to collaborate with our team and take advantage of the breadth and depth that the TechAtlas platform has to offer, as well as the capital we manage.</p>
+<p>We believe that, when a business proposition is framed correctly, the capital markets have the resources and depth of understanding to fund proper experimental design and solution development, without forcing companies to cut corners, and we have collaborated extensively with other funds that share our philosophy to enable ambitious and capital intensive endeavors.</p>
+
+
+                                        </ul> 
+
+
+
+                                    </div>
+                                    <!-- #tab3 -->
+                                </div>
+
+                            </div>			
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <!--div class="col-md-8 col-sm-7 col-xs-12 testimonial">		
+    
+                        <div class="clearfix" id="page">
+    
+                           
+    
+                        
+    
+    
+    
+    
+                        </div>
+    
+                    </div-->
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+</section>
+
+
+
+<div class="slider-strip"></div>
+
+<section id="slide-4" class="homeSlide">
+        <!--a class="grey-arrow" href="#team"><img src="http://www.racap.com/wp-content/themes/racap/img/down-grey.png" /></a-->
+    <div class="bcg">
+
+        <div class="slide-4-bg-overlay">
+
+
+            <div class="feature-inner-part3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 feature-inner3">
+                            <div class="feature-inner-conent3">
+                                <h1>"WE OWE A DEBT TO THE PEOPLE WHO HAVE MENTORED US, AND WE IN TURN HAVE A RESPONSIBILITY TO TURN OUR HARD WON LESSONS INTO A SOLID FOUNDATION FOR OUR INDUSTRY'S EMERGING INNOVATORS AND LEADERS."</h1>
+                                <span>RAJEEV SHAH, </span>
+                                <p>MANAGING DIRECTOR & PORTFOLIO  MANAGER</p>
+
+                                <a class="grey-arrow" href="#team"><img src="http://www.racap.com/wp-content/themes/racap/img/down-grey.png" /></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="transform-text">
+
+                        <p>SEQUOIA & KINGS CANYON </p><small>NATIONAL PARK</small><span>CALIFORNIA</span>                    </div>
+                </div>
+
+            </div>	
+
+
+            <!--div class="container">
+
+                <div class="row">
+
+
+
+                    <div class="col-md-4 col-sm-5 col-xs-12">
+
+                        <div class="left-box-section transition-effect-leftbox">
+
+                            <h1></h1>
+
+                            <span></span>
+
+                            <small></small>
+
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <div class="bottom-box-slide4">
+
+                            <a href="#slide-1"><img src="/img/racap_1_notag_white.png"></a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-8 col-sm-7 col-xs-12">
+
+                        <div class="right-box-section">
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div-->
+
+
+
+            <!--div class="transform-text">
+
+            
+            </div-->
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<div class="slider-strip"></div>
+
+<section id="team" class="homeSlide">
+
+    <div class="bcg">
+
+
+
+        <div class="container">
+
+            <div class="row">
+
+
+
+                <div class="col-md-4 col-sm-5 col-xs-12">
+
+                    <div class="left-box-section">
+
+                        <h1>THE TEAM</h1>
+
+                        <p>Investment team is supported by a diverse group of scientific researchers and writers that help facilitate the firm&#8217;s technical and clinical research efforts.</p>
+
+                        <a class="move_to_top" href="#slide-1"><small>TOP<img src="http://www.racap.com/wp-content/themes/racap/img/arrow-grey.png"></small></a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-8 col-sm-7 col-xs-12">
+
+                    <div class="right-box-section right-div-section-team">
+
+
+
+
+
+                        <div class="PamphletWidget clearfix grpelem" id="pamphletu4556">
+
+                            <div class="ThumbGroup clearfix grpelem" id="u4557">
+
+                                <!-- none box -->
+
+                                <div class="popup_anchor">
+
+                                    <div class="popup_element Thumb clearfix wp-tab-active PamphletThumbSelected" id="pu4558">
+
+                                        <!-- group -->
+
+                                        <div class="popup_anchor">
+
+                                            <div class="popup_element clearfix" id="u4558" style="border: 1px solid rgb(0, 40, 59);">
+
+                                                <!-- group -->
+
+                                                <div class="clearfix grpelem" id="u4559-4" data-muse-uid="U4559">
+
+                                                    <!-- content -->
+
+                                                    <!-- m_editable region-id="editable-static-tag-U4559" template="index.html" data-type="html" data-ice-options="disableImageResize,none,clickable" -->
+
+                                                    <p class="exe_tab_title">TEAM </p>
+
+                                                    <!-- /m_editable -->
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="popup_anchor right_float">
+
+                                    <div class="popup_element Thumb clearfix" id="pu4560">
+
+                                        <!-- group -->
+
+                                        <div class="popup_anchor">
+
+                                            <div class="popup_element clearfix" id="u4560">
+
+                                                <!-- group -->
+
+                                                <div class="clearfix grpelem" id="u4561-4" data-muse-uid="U4561">
+
+                                                    <!-- content -->
+
+                                                    <!-- m_editable region-id="editable-static-tag-U4561" template="index.html" data-type="html" data-ice-options="disableImageResize,none,clickable" -->
+
+                                                    <p class="exe_tab_title">EXECUTIVES IN RESIDENCE</p>
+
+                                                    <!-- /m_editable -->
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- none box -->
+
+                            <div class="popup_anchor" id="u4570popup">
+
+                                <div style="width: 0px; height: 0px;" class="ContainerGroup clearfix" id="u4570">
+
+                                    <!-- stack box -->
+
+                                    <div style="display: block;" class="Container clearfix grpelem wp-panel wp-panel-active" id="u4596">
+
+                                        <!-- group -->
+
+                                                                                <!-- Team Section -->
+                                        <div class="PamphletWidget clearfix grpelem" id="pamphletu1543">
+
+                                            <!-- none box -->
+
+                                            <div class="popup_anchor" id="u1546popup">
+
+                                                <div style="width: 0px; height: 0px;" class="ContainerGroup clearfix" id="u1546">
+
+                                                    <!-- stack box -->
+                                                                                                                <div id="team_0" style="background-attachment: fixed; display: block; " class="tab-right-content-parent Container clearfix grpelem wp-panel " >
+
+
+                                                                <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                    <p class="Bio-Names">PETER KOLCHINSKY, PhD</p>
+
+                                                                    <p class="Bio-Title" id="">Managing Director & Portfolio Manager</p>
+
+                                                                    <p class="Bio-body">&nbsp;</p>
+
+                                                                    <p class="Bio-body"><p>Peter Kolchinsky is a founder, Managing Director, and Portfolio Manager at RA Capital Management, a crossover fund manager dedicated to evidence-based investing in healthcare and life science companies. He is active in both public and private investments in companies developing drugs, medical devices, diagnostics, and research tools, and serves as a member of the Board of Directors of Dicerna Pharmaceutics, Wave Life Sciences, and a number of private companies. Peter also leads the firm’s outreach and publishing efforts, which aim to make a positive social impact and spark collaboration among healthcare stakeholders, including patients, physicians, researchers, policy makers, and industry.  He authored “The Entrepreneur’s Guide to a Biotech Startup” and served on the Board of Global Science and Technology for the National Academies of Sciences. Peter received a Bachelor’s degree from Cornell University and a PhD in Virology from Harvard University.</p>
+</p>
+
+                                                                    <!-- /m_editable -->
+
+                                                                </div>
+
+                                                            </div>
+                                                                                                                        <div id="team_1" style="background-attachment: fixed;  display: none; " class="tab-right-content-parent Container clearfix grpelem wp-panel " >
+
+
+                                                                <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                    <p class="Bio-Names">RAJEEV SHAH</p>
+
+                                                                    <p class="Bio-Title" id="">Managing Director & Portfolio Manager</p>
+
+                                                                    <p class="Bio-body">&nbsp;</p>
+
+                                                                    <p class="Bio-body"><p>Rajeev Shah is a Managing Director and Portfolio Manager at RA Capital Management. He is active in both public and private investments in companies developing drugs, medical devices, diagnostics, and research tools. Raj is active in the firm’s outreach efforts, speaking frequently both at industry events and in classrooms, Prior to joining RA Capital, Raj worked as a Senior Project Leader at Altus Pharmaceuticals, a spin-off company of Vertex Pharmaceuticals. At Altus, he assessed business processes and implemented system solutions for all science areas. Raj graduated from Cornell University, where he majored in Chemistry with a concentration in Economics.</p>
+</p>
+
+                                                                    <!-- /m_editable -->
+
+                                                                </div>
+
+                                                            </div>
+                                                                                                                        <div id="team_2" style="background-attachment: fixed;  display: none; " class="tab-right-content-parent Container clearfix grpelem wp-panel " >
+
+
+                                                                <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                    <p class="Bio-Names">ANDREW LEVIN, MD/PhD</p>
+
+                                                                    <p class="Bio-Title" id="">Managing Director</p>
+
+                                                                    <p class="Bio-body">&nbsp;</p>
+
+                                                                    <p class="Bio-body"><p>Andrew Levin is a Managing Director at RA Capital Management. He is active in both public and private investments in companies developing drugs, medical devices, diagnostics, and research tools. Prior to his current position at RA Capital, he was a Vice President at H.I.G. BioVentures and the Director of Pharmaceutical Sciences at the Clinton Health Access Initiative. He holds a BSE in Mechanical Engineering from Princeton University, a PhD in Biomedical Engineering from the Massachusetts Institute of Technology, and an MD from Harvard Medical School. His graduate thesis investigated specific and general binding in arterial drug delivery.</p>
+</p>
+
+                                                                    <!-- /m_editable -->
+
+                                                                </div>
+
+                                                            </div>
+                                                                                                                        <div id="team_3" style="background-attachment: fixed;  display: none; " class="tab-right-content-parent Container clearfix grpelem wp-panel " >
+
+
+                                                                <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                    <p class="Bio-Names">AMANDA DANIELS</p>
+
+                                                                    <p class="Bio-Title" id="">Chief Operating Officer</p>
+
+                                                                    <p class="Bio-body">&nbsp;</p>
+
+                                                                    <p class="Bio-body"><p>Amanda Daniels is the Chief Operating Officer at RA Capital Management. She has been a member of the operations team since joining RA Capital in February 2007. In her capacity she is involved with the firm’s back office and operational responsibilities including finance, accounting, and audit, regulatory and legal issues, partner relationships, and business policies and continuity. Prior to joining RA Capital, Amanda worked at a globally recognized custodian bank interfacing with investment managers of institutional mutual funds. She received a Bachelor of Science in Mathematics from St. Michael’s College.</p>
+</p>
+
+                                                                    <!-- /m_editable -->
+
+                                                                </div>
+
+                                                            </div>
+                                                                                                                        <div id="team_4" style="background-attachment: fixed;  display: none; " class="tab-right-content-parent Container clearfix grpelem wp-panel " >
+
+
+                                                                <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                    <p class="Bio-Names">KAI WU</p>
+
+                                                                    <p class="Bio-Title" id="">Chief Financial Officer</p>
+
+                                                                    <p class="Bio-body">&nbsp;</p>
+
+                                                                    <p class="Bio-body"><p>Kai Wu is Chief Financial Officer at RA Capital Management, a crossover fund manager dedicated to evidence-based investing in healthcare and life science companies. He works closely with both the Investment and Operations groups to ensure the institutional quality of the firm’s infrastructure.  Prior to his current position at RA Capital, Kai served as the CFO/CCO of both Palo Alto Investors and Lucerne Capital Management. He holds a BS in Business Administration from Georgetown University.</p>
+</p>
+
+                                                                    <!-- /m_editable -->
+
+                                                                </div>
+
+                                                            </div>
+                                                                                                                        <div id="team_5" style="background-attachment: fixed;  display: none; " class="tab-right-content-parent Container clearfix grpelem wp-panel " >
+
+
+                                                                <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                    <p class="Bio-Names">NICHOLAS McGRATH, JD/LLM</p>
+
+                                                                    <p class="Bio-Title" id="">General Counsel and Chief Compliance Officer</p>
+
+                                                                    <p class="Bio-body">&nbsp;</p>
+
+                                                                    <p class="Bio-body"><p>Nicholas McGrath is the General Counsel and Chief Compliance Officer at RA Capital Management. He advises the company on legal, regulatory, and compliance issues. Prior to his current position, Nicholas was a corporate associate at K&amp;L Gates LLP and a boutique New England law firm, where he counseled clients on various corporate matters, including company formation, equity and debt financing transactions, mergers and acquisitions, licensing arrangements, commercial lending transactions, corporate restructurings and governance, and general commercial transactions. He also served as corporate counsel at Audax Group, a mid-market private equity firm, through a secondment program at K&amp;L Gates. Nicholas received a BA in International Business from The University of Massachusetts, Amherst, a J.D. from The University of Maine School of Law, and an LL.M. in Bankruptcy from St. John’s University School of Law.</p>
+</p>
+
+                                                                    <!-- /m_editable -->
+
+                                                                </div>
+
+                                                            </div>
+                                                                                                                        <div id="team_6" style="background-attachment: fixed;  display: none; " class="tab-right-content-parent Container clearfix grpelem wp-panel " >
+
+
+                                                                <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                    <p class="Bio-Names">JEFF BREAY</p>
+
+                                                                    <p class="Bio-Title" id="">Head Trader</p>
+
+                                                                    <p class="Bio-body">&nbsp;</p>
+
+                                                                    <p class="Bio-body"><p>Jeff Breay is Head Trader at RA Capital Management. His responsibilities include managing the portfolio’s publicly traded equity positions, monitoring market, sector, and individual equity volume and volatility, and developing relationships with broker/dealer counterparties. He holds a BA in Economics and Psychology from Georgetown, and has 15 years of experience trading a variety of asset classes for institutional investors.</p>
+</p>
+
+                                                                    <!-- /m_editable -->
+
+                                                                </div>
+
+                                                            </div>
+                                                                                                                        <div id="team_7" style="background-attachment: fixed;  display: none; " class="tab-right-content-parent Container clearfix grpelem wp-panel " >
+
+
+                                                                <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                    <p class="Bio-Names">BARBARA HERBST</p>
+
+                                                                    <p class="Bio-Title" id="">Director of Trading Compliance & Operations</p>
+
+                                                                    <p class="Bio-body">&nbsp;</p>
+
+                                                                    <p class="Bio-body"><p>Barbara Herbst is the Director of Trading Compliance and Operations at RA Capital Management. Her responsibilities include allocating trades, reconciling positions, and managing trading systems. She holds a BS in Business Administration with a concentration in Finance from Boston University and has 11 years of experience in operations, compliance, and trading.</p>
+</p>
+
+                                                                    <!-- /m_editable -->
+
+                                                                </div>
+
+                                                            </div>
+                                                                                                                        <div id="team_8" style="background-attachment: fixed;  display: none; " class="tab-right-content-parent Container clearfix grpelem wp-panel " >
+
+
+                                                                <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                    <p class="Bio-Names">MICHAEL CALORE</p>
+
+                                                                    <p class="Bio-Title" id="">Director of Investor Relations</p>
+
+                                                                    <p class="Bio-body">&nbsp;</p>
+
+                                                                    <p class="Bio-body"><p>Michael Calore is the Director of Investor Relations at RA Capital Management. His responsibilities include creating and maintaining relationships with current and potential investors and keeping them apprised of the fund’s activity. He holds a BS in Finance from Providence College and has several years of investor relations experience.</p>
+</p>
+
+                                                                    <!-- /m_editable -->
+
+                                                                </div>
+
+                                                            </div>
+                                                                                                                        <div id="team_9" style="background-attachment: fixed;  display: none; " class="tab-right-content-parent Container clearfix grpelem wp-panel " >
+
+
+                                                                <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                    <p class="Bio-Names">STEPHANIE MOORE</p>
+
+                                                                    <p class="Bio-Title" id="">Director of Human Resources</p>
+
+                                                                    <p class="Bio-body">&nbsp;</p>
+
+                                                                    <p class="Bio-body"><p>Stephanie Moore is the Director of Human Resources at RA Capital Management. Her responsibilities include talent assessment and acquisition as well as managing organizational growth and development.Prior to joining RA Capital, Stephanie led recruiting strategy at Aileron Therapeutics and was a Principal at J. Robert Scott Executive Search. She earned a BA in English Literature from Boise State University and an MA in Film Studies from the University of Rochester.</p>
+</p>
+
+                                                                    <!-- /m_editable -->
+
+                                                                </div>
+
+                                                            </div>
+                                                                                                                        <div id="team_10" style="background-attachment: fixed;  display: none; " class="tab-right-content-parent Container clearfix grpelem wp-panel " >
+
+
+                                                                <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                    <p class="Bio-Names">GERALD SEWACK, PhD</p>
+
+                                                                    <p class="Bio-Title" id="">Director of TechAtlas</p>
+
+                                                                    <p class="Bio-body">&nbsp;</p>
+
+                                                                    <p class="Bio-body"><p>Gerald Sewack is the Director of the TechAtlas Group at RA Capital Management, a crossover fund manager dedicated to evidence-based investing in healthcare and life science companies. He oversees the production of competitive landscapes for indications and capabilities in human diseases. He holds a PhD from Harvard Medical School in Molecular and Cellular Biology. His research investigated chromatin structure and transcription factor binding. Following his postdoctoral studies, he spent 11 years at Global Prior Art, an Intellectual Property analysis firm, creating patent maps and managing the Life Science practice before joining RA Capital to run the TechAtlas group.</p>
+</p>
+
+                                                                    <!-- /m_editable -->
+
+                                                                </div>
+
+                                                            </div>
+                                                                                                            </div>
+
+                                                <div class="ThumbGroup clearfix grpelem" id="u4678">
+
+                                                    
+
+
+                                                            <!-- group -->
+
+                                                            <div class="popup_anchor">
+
+                                                                <div class="popup_element clearfix" id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div id="team_0" class="clearfix team_tab_content left-tab-element  selected ">
+
+
+                                                                        <p class="t_name">PETER KOLCHINSKY, PhD</p>
+
+                                                                        <p class="t_desig">Managing Director & Portfolio Manager</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            
+
+
+                                                            <!-- group -->
+
+                                                            <div class="popup_anchor">
+
+                                                                <div class="popup_element clearfix" id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div id="team_1" class="clearfix team_tab_content left-tab-element ">
+
+
+                                                                        <p class="t_name">RAJEEV SHAH</p>
+
+                                                                        <p class="t_desig">Managing Director & Portfolio Manager</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            
+
+
+                                                            <!-- group -->
+
+                                                            <div class="popup_anchor">
+
+                                                                <div class="popup_element clearfix" id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div id="team_2" class="clearfix team_tab_content left-tab-element ">
+
+
+                                                                        <p class="t_name">ANDREW LEVIN, MD/PhD</p>
+
+                                                                        <p class="t_desig">Managing Director</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            
+
+
+                                                            <!-- group -->
+
+                                                            <div class="popup_anchor">
+
+                                                                <div class="popup_element clearfix" id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div id="team_3" class="clearfix team_tab_content left-tab-element ">
+
+
+                                                                        <p class="t_name">AMANDA DANIELS</p>
+
+                                                                        <p class="t_desig">Chief Operating Officer</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            
+
+
+                                                            <!-- group -->
+
+                                                            <div class="popup_anchor">
+
+                                                                <div class="popup_element clearfix" id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div id="team_4" class="clearfix team_tab_content left-tab-element ">
+
+
+                                                                        <p class="t_name">KAI WU</p>
+
+                                                                        <p class="t_desig">Chief Financial Officer</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            
+
+
+                                                            <!-- group -->
+
+                                                            <div class="popup_anchor">
+
+                                                                <div class="popup_element clearfix" id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div id="team_5" class="clearfix team_tab_content left-tab-element ">
+
+
+                                                                        <p class="t_name">NICHOLAS McGRATH, JD/LLM</p>
+
+                                                                        <p class="t_desig">General Counsel and Chief Compliance Officer</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            
+
+
+                                                            <!-- group -->
+
+                                                            <div class="popup_anchor">
+
+                                                                <div class="popup_element clearfix" id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div id="team_6" class="clearfix team_tab_content left-tab-element ">
+
+
+                                                                        <p class="t_name">JEFF BREAY</p>
+
+                                                                        <p class="t_desig">Head Trader</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            
+
+
+                                                            <!-- group -->
+
+                                                            <div class="popup_anchor">
+
+                                                                <div class="popup_element clearfix" id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div id="team_7" class="clearfix team_tab_content left-tab-element ">
+
+
+                                                                        <p class="t_name">BARBARA HERBST</p>
+
+                                                                        <p class="t_desig">Director of Trading Compliance & Operations</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            
+
+
+                                                            <!-- group -->
+
+                                                            <div class="popup_anchor">
+
+                                                                <div class="popup_element clearfix" id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div id="team_8" class="clearfix team_tab_content left-tab-element ">
+
+
+                                                                        <p class="t_name">MICHAEL CALORE</p>
+
+                                                                        <p class="t_desig">Director of Investor Relations</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            
+
+
+                                                            <!-- group -->
+
+                                                            <div class="popup_anchor">
+
+                                                                <div class="popup_element clearfix" id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div id="team_9" class="clearfix team_tab_content left-tab-element ">
+
+
+                                                                        <p class="t_name">STEPHANIE MOORE</p>
+
+                                                                        <p class="t_desig">Director of Human Resources</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            
+
+
+                                                            <!-- group -->
+
+                                                            <div class="popup_anchor">
+
+                                                                <div class="popup_element clearfix" id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div id="team_10" class="clearfix team_tab_content left-tab-element ">
+
+
+                                                                        <p class="t_name">GERALD SEWACK, PhD</p>
+
+                                                                        <p class="t_desig">Director of TechAtlas</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            
+                                                </div>
+
+                                            </div>
+
+                                            <div class="acc-container">
+                                                                                                        <div class="accc">											  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>PETER KOLCHINSKY, PhD</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Managing Director & Portfolio Manager</h3>
+
+                                                                    <p>Peter Kolchinsky is a founder, Managing Director, and Portfolio Manager at RA Capital Management, a crossover fund manager dedicated to evidence-based investing in healthcare and life science companies. He is active in both public and private investments in companies developing drugs, medical devices, diagnostics, and research tools, and serves as a member of the Board of Directors of Dicerna Pharmaceutics, Wave Life Sciences, and a number of private companies. Peter also leads the firm’s outreach and publishing efforts, which aim to make a positive social impact and spark collaboration among healthcare stakeholders, including patients, physicians, researchers, policy makers, and industry.  He authored “The Entrepreneur’s Guide to a Biotech Startup” and served on the Board of Global Science and Technology for the National Academies of Sciences. Peter received a Bachelor’s degree from Cornell University and a PhD in Virology from Harvard University.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                                                                                <div class="accc">											  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>RAJEEV SHAH</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Managing Director & Portfolio Manager</h3>
+
+                                                                    <p>Rajeev Shah is a Managing Director and Portfolio Manager at RA Capital Management. He is active in both public and private investments in companies developing drugs, medical devices, diagnostics, and research tools. Raj is active in the firm’s outreach efforts, speaking frequently both at industry events and in classrooms, Prior to joining RA Capital, Raj worked as a Senior Project Leader at Altus Pharmaceuticals, a spin-off company of Vertex Pharmaceuticals. At Altus, he assessed business processes and implemented system solutions for all science areas. Raj graduated from Cornell University, where he majored in Chemistry with a concentration in Economics.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                                                                                <div class="accc">											  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>ANDREW LEVIN, MD/PhD</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Managing Director</h3>
+
+                                                                    <p>Andrew Levin is a Managing Director at RA Capital Management. He is active in both public and private investments in companies developing drugs, medical devices, diagnostics, and research tools. Prior to his current position at RA Capital, he was a Vice President at H.I.G. BioVentures and the Director of Pharmaceutical Sciences at the Clinton Health Access Initiative. He holds a BSE in Mechanical Engineering from Princeton University, a PhD in Biomedical Engineering from the Massachusetts Institute of Technology, and an MD from Harvard Medical School. His graduate thesis investigated specific and general binding in arterial drug delivery.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                                                                                <div class="accc">											  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>AMANDA DANIELS</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Chief Operating Officer</h3>
+
+                                                                    <p>Amanda Daniels is the Chief Operating Officer at RA Capital Management. She has been a member of the operations team since joining RA Capital in February 2007. In her capacity she is involved with the firm’s back office and operational responsibilities including finance, accounting, and audit, regulatory and legal issues, partner relationships, and business policies and continuity. Prior to joining RA Capital, Amanda worked at a globally recognized custodian bank interfacing with investment managers of institutional mutual funds. She received a Bachelor of Science in Mathematics from St. Michael’s College.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                                                                                <div class="accc">											  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>KAI WU</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Chief Financial Officer</h3>
+
+                                                                    <p>Kai Wu is Chief Financial Officer at RA Capital Management, a crossover fund manager dedicated to evidence-based investing in healthcare and life science companies. He works closely with both the Investment and Operations groups to ensure the institutional quality of the firm’s infrastructure.  Prior to his current position at RA Capital, Kai served as the CFO/CCO of both Palo Alto Investors and Lucerne Capital Management. He holds a BS in Business Administration from Georgetown University.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                                                                                <div class="accc">											  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>NICHOLAS McGRATH, JD/LLM</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>General Counsel and Chief Compliance Officer</h3>
+
+                                                                    <p>Nicholas McGrath is the General Counsel and Chief Compliance Officer at RA Capital Management. He advises the company on legal, regulatory, and compliance issues. Prior to his current position, Nicholas was a corporate associate at K&amp;L Gates LLP and a boutique New England law firm, where he counseled clients on various corporate matters, including company formation, equity and debt financing transactions, mergers and acquisitions, licensing arrangements, commercial lending transactions, corporate restructurings and governance, and general commercial transactions. He also served as corporate counsel at Audax Group, a mid-market private equity firm, through a secondment program at K&amp;L Gates. Nicholas received a BA in International Business from The University of Massachusetts, Amherst, a J.D. from The University of Maine School of Law, and an LL.M. in Bankruptcy from St. John’s University School of Law.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                                                                                <div class="accc">											  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>JEFF BREAY</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Head Trader</h3>
+
+                                                                    <p>Jeff Breay is Head Trader at RA Capital Management. His responsibilities include managing the portfolio’s publicly traded equity positions, monitoring market, sector, and individual equity volume and volatility, and developing relationships with broker/dealer counterparties. He holds a BA in Economics and Psychology from Georgetown, and has 15 years of experience trading a variety of asset classes for institutional investors.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                                                                                <div class="accc">											  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>BARBARA HERBST</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Director of Trading Compliance & Operations</h3>
+
+                                                                    <p>Barbara Herbst is the Director of Trading Compliance and Operations at RA Capital Management. Her responsibilities include allocating trades, reconciling positions, and managing trading systems. She holds a BS in Business Administration with a concentration in Finance from Boston University and has 11 years of experience in operations, compliance, and trading.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                                                                                <div class="accc">											  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>MICHAEL CALORE</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Director of Investor Relations</h3>
+
+                                                                    <p>Michael Calore is the Director of Investor Relations at RA Capital Management. His responsibilities include creating and maintaining relationships with current and potential investors and keeping them apprised of the fund’s activity. He holds a BS in Finance from Providence College and has several years of investor relations experience.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                                                                                <div class="accc">											  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>STEPHANIE MOORE</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Director of Human Resources</h3>
+
+                                                                    <p>Stephanie Moore is the Director of Human Resources at RA Capital Management. Her responsibilities include talent assessment and acquisition as well as managing organizational growth and development.Prior to joining RA Capital, Stephanie led recruiting strategy at Aileron Therapeutics and was a Principal at J. Robert Scott Executive Search. She earned a BA in English Literature from Boise State University and an MA in Film Studies from the University of Rochester.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                                                                                <div class="accc">											  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>GERALD SEWACK, PhD</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Director of TechAtlas</h3>
+
+                                                                    <p>Gerald Sewack is the Director of the TechAtlas Group at RA Capital Management, a crossover fund manager dedicated to evidence-based investing in healthcare and life science companies. He oversees the production of competitive landscapes for indications and capabilities in human diseases. He holds a PhD from Harvard Medical School in Molecular and Cellular Biology. His research investigated chromatin structure and transcription factor binding. Following his postdoctoral studies, he spent 11 years at Global Prior Art, an Intellectual Property analysis firm, creating patent maps and managing the Life Science practice before joining RA Capital to run the TechAtlas group.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                        	
+                                            </div>
+                                        </div></div>
+                                        <!-- End Team Section -->
+
+                                        <!-- Executive Section -->
+
+                                        <div style="display:none;" class="Container clearfix grpelem wp-panel" id="u4571">
+
+                                            <!-- group -->
+
+                                            <div class="PamphletWidget clearfix grpelem" id="pamphletu4677">
+
+                                                <!-- none box -->
+
+                                                <div class="popup_anchor" id="u4701popup">
+
+                                                    <div style="width: 0px; height: 0px;" class="ContainerGroup clearfix" id="u4701">
+
+                                                        <!-- stack box -->
+                                                        
+                                                                <div style="background-attachment: fixed; display: block; " class="tab-right-content-parent Container clearfix grpelem wp-panel" id="executive_0">
+
+                                                                    <!-- group -->
+
+                                                                    <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                        <!-- content -->
+
+                                                                        <!-- m_editable region-id="editable-static-tag-U4705" template="index.html" data-type="html" data-ice-options="disableImageResize,none" -->
+
+                                                                        <p class="Bio-Names" id="">Parker Cassidy, MBA</p>
+
+                                                                        <p class="Bio-Title" id="">Executive in Residence: Emeritus</p>
+
+                                                                        <p class="Bio-body">&nbsp;</p>
+
+                                                                        <p class="Bio-body"><p>Parker Cassidy was an Executive in Residence at RA Capital Management. Prior to his residency at RA Capital,Parker worked at Becton Dickinson where he served as the senior leader of significant growth initiatives in molecular diagnostics (BD MAX) and continuous glucose monitoring. Previous positions include working Upstate Biotechnology (now part of EMD Millipore) in marketing, business development,and general management roles, including leading the acquisition and integration of Linco. He received a Bachelor of Science degree in Mechanical Engineering from Boston University,and an MBA from Darden Business School at the University of Virginia.</p>
+
+                                                                        </p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+                                                                
+                                                                <div style="background-attachment: fixed;  display: none; " class="tab-right-content-parent Container clearfix grpelem wp-panel" id="executive_1">
+
+                                                                    <!-- group -->
+
+                                                                    <div class="clearfix grpelem tab-right-content-inner" id="" data-muse-uid="">
+
+                                                                        <!-- content -->
+
+                                                                        <!-- m_editable region-id="editable-static-tag-U4705" template="index.html" data-type="html" data-ice-options="disableImageResize,none" -->
+
+                                                                        <p class="Bio-Names" id="">David Kolstad, MBA</p>
+
+                                                                        <p class="Bio-Title" id="">Executive in Residence: Emeritus</p>
+
+                                                                        <p class="Bio-body">&nbsp;</p>
+
+                                                                        <p class="Bio-body"><p>David Kolstad was RA Captal’s first Executive in Residence. In this role, David surveyed a number of promising clinical spaces for potential investment, worked closely with select portfolio companies, and launched Gentuity, LLC. Now CEO of Gentuity, a company developing innovative surgical tools for minimally invasive procedures, David continues as a board member with RA Capital’s private portfolio company MitraSpan and as a resource to the RA Capital team.</p>
+<p>Prior to his engagement at RA Capital, David was a senior executive with St. Jude Medical serving as General Manager of its Imaging Business. He was previously Chairman and CEO of LightLab Imaging, leading its growth and the acquisition of the business by St. Jude Medical. Before joining LightLab, David served as Vice President of Worldwide Marketing for Hewlett-Packard’s medical imaging business and on the board and Vice-Chair of Mass Medic. His experience also includes providing senior leadership to venture backed companies developing novel solutions for percutaneous valve repair and end-stage heart failure. He received his BS in Chemical Engineering from the Worcester Polytechnic Institute and his MBA from The Amos Tuck School of Business Administration at Dartmouth.</p>
+
+                                                                        </p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+                                                                
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="ThumbGroup clearfix grpelem" id="u4678">
+
+                                                    
+                                                            <div class="popup_anchor">
+
+                                                                <div class="Thumb popup_element clearfix " id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div class="clearfix team_tab_content1 left-tab-element  selected " id="executive_0" data-muse-uid="">
+
+                                                                        <!-- content -->
+
+                                                                        <!-- m_editable region-id="editable-static-tag-U4692" template="index.html" data-type="html" data-ice-options="disableImageResize,none,clickable" -->
+
+                                                                        <p class="t_name">Parker Cassidy, MBA</p>
+
+                                                                        <p class="t_desig">Executive in Residence: Emeritus</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                            
+                                                            <div class="popup_anchor">
+
+                                                                <div class="Thumb popup_element clearfix " id="">
+
+                                                                    <!-- group -->
+
+                                                                    <div class="clearfix team_tab_content1 left-tab-element " id="executive_1" data-muse-uid="">
+
+                                                                        <!-- content -->
+
+                                                                        <!-- m_editable region-id="editable-static-tag-U4692" template="index.html" data-type="html" data-ice-options="disableImageResize,none,clickable" -->
+
+                                                                        <p class="t_name">David Kolstad, MBA</p>
+
+                                                                        <p class="t_desig">Executive in Residence: Emeritus</p>
+
+                                                                        <!-- /m_editable -->
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                            
+                                                </div>
+
+                                            </div>
+
+
+
+
+
+
+
+                                            <!-----------  Mobile View -------------->
+
+
+
+                                            <div class="acc-container">
+
+
+
+
+
+                                                
+
+
+
+
+                                                        <div class="accc">										  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>Parker Cassidy, MBA</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Executive in Residence: Emeritus</h3>
+
+                                                                    <p>Parker Cassidy was an Executive in Residence at RA Capital Management. Prior to his residency at RA Capital,Parker worked at Becton Dickinson where he served as the senior leader of significant growth initiatives in molecular diagnostics (BD MAX) and continuous glucose monitoring. Previous positions include working Upstate Biotechnology (now part of EMD Millipore) in marketing, business development,and general management roles, including leading the acquisition and integration of Linco. He received a Bachelor of Science degree in Mechanical Engineering from Boston University,and an MBA from Darden Business School at the University of Virginia.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                        
+
+
+
+
+                                                        <div class="accc">										  
+
+                                                            <div class="acc-btn aaa">
+
+                                                                <h1>David Kolstad, MBA</h1>
+
+                                                            </div>
+
+                                                            <div class="acc-content bbb">
+
+                                                                <div class="acc-content-inner">
+
+                                                                    <h3>Executive in Residence: Emeritus</h3>
+
+                                                                    <p>David Kolstad was RA Captal’s first Executive in Residence. In this role, David surveyed a number of promising clinical spaces for potential investment, worked closely with select portfolio companies, and launched Gentuity, LLC. Now CEO of Gentuity, a company developing innovative surgical tools for minimally invasive procedures, David continues as a board member with RA Capital’s private portfolio company MitraSpan and as a resource to the RA Capital team.</p>
+<p>Prior to his engagement at RA Capital, David was a senior executive with St. Jude Medical serving as General Manager of its Imaging Business. He was previously Chairman and CEO of LightLab Imaging, leading its growth and the acquisition of the business by St. Jude Medical. Before joining LightLab, David served as Vice President of Worldwide Marketing for Hewlett-Packard’s medical imaging business and on the board and Vice-Chair of Mass Medic. His experience also includes providing senior leadership to venture backed companies developing novel solutions for percutaneous valve repair and end-stage heart failure. He received his BS in Chemical Engineering from the Worcester Polytechnic Institute and his MBA from The Amos Tuck School of Business Administration at Dartmouth.</p>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                        	
+
+
+
+
+
+
+
+
+
+                                            </div>
+
+
+
+
+
+
+
+
+
+                                            <!-----------  Mobile View -------------->	
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </div>
+
+                           
+
+                                </div>
+
+
+
+                            </div> 
+
+
+
+                        </div>   
+
+
+
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</section>
+
+
+
+<div class="slider-strip"></div>
+
+<section id="slide-6" class="homeSlide">
+        <!--a class="grey-arrow" href="#venture"><img src="http://www.racap.com/wp-content/themes/racap/img/down-grey.png" /></a-->
+    <div class="bcg">
+
+        <div class="slide-6-bg-overlay">
+
+            <div class="feature-inner-part4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 feature-inner4">
+                            <div class="feature-inner-conent4">
+                                <small>“The biotech industry is producing results at an unprecedented rate on the foundation of profound scientific breakthroughs.</small>
+                                <h1>AS INVESTORS AND THOUGHT PARTNERS, IT IS A TRUE PRIVILEGE TO SUPPORT MANAGEMENT TEAMS AS THEY TRANSLATE THEIR TECHNOLOGIES INTO BENEFITS FOR PATIENTS.”</h1>
+                                <span>ANDREW LEVIN, MD/PhD</span>
+                                <p>MANAGING DIRECTOR</p>
+
+                                <a class="grey-arrow" href="#venture"><img src="http://www.racap.com/wp-content/themes/racap/img/down-grey.png" /></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="transform-text">
+
+                        <p>ARCHES</p><small>NATIONAL PARK</small><span>UTAH</span>                    </div>
+                </div>
+
+            </div>	
+
+            <!--div class="container">
+
+                <div class="row">
+
+
+
+                    <div class="col-md-4 col-sm-5 col-xs-12">
+
+                        <div class="left-box-section transition-effect-leftbox">
+
+
+
+                            <p>“The biotech industry is producing results at an unprecedented rate on the foundation of profound scientific breakthroughs.</p>
+
+                            <h1>AS INVESTORS AND THOUGHT PARTNERS, IT IS A TRUE PRIVILEGE TO SUPPORT MANAGEMENT TEAMS AS THEY TRANSLATE THEIR TECHNOLOGIES INTO BENEFITS FOR PATIENTS.”</h1>
+
+
+
+                            <span>ANDREW LEVIN, MD/PhD</span>
+
+                            <small>MANAGING DIRECTOR</small>
+
+                        </div>
+
+                        <div class="bottom-box-slide4">
+
+                            <a href="#slide-1"><img src="http://www.racap.com/wp-content/themes/racap/img/racap_1_notag_white.png"></a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-8 col-sm-7 col-xs-12">
+
+                        <div class="right-box-section">
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div-->
+
+
+
+            <!--div class="transform-text">
+
+            
+            </div-->
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<div class="slider-strip"></div>
+
+<section id="venture" class="homeSlide">
+
+    <div class="bcg">
+
+
+
+        <div class="container">
+
+            <div class="row">
+
+
+
+                <div class="col-md-4 col-sm-5 col-xs-12">
+
+                    <div class="left-box-section">
+
+                        <h1>VENTURE</h1>
+                        <p>RA Capital has a particular interest in funding innovation that contributes to the following healthcare themes, which converge on a higher quality and more cost-effective delivery of significant healthcare outcomes. These investment themes may change in the future.</p>
+
+                        <a href="#slide-1"><small>TOP<img src="http://www.racap.com/wp-content/themes/racap/img/arrow-grey.png"></small></a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-8 col-sm-7 col-xs-12">
+
+                    <div class="right-box-section right-div-section-venture">
+
+
+
+                        <div class="clearfix colelem" id="ppc-1">
+
+
+
+                            <div class="PamphletWidget clearfix grpelem" id="pamphletu1913">
+
+
+
+                                <div class="ThumbGroup clearfix grpelem" id="u1914">
+
+                                    <!-- none box -->
+
+                                    <div class="popup_anchor">
+
+                                        <div class="popup_element Thumb clearfix wp-tab-active PamphletThumbSelected" id="pu1917">
+
+                                            <!-- group -->
+
+                                            <div class="popup_anchor">
+
+                                                <div class="popup_element clearfix" id="u1917">
+
+                                                    <!-- group -->
+
+                                                    <div class="clearfix grpelem" id="u1918-5" data-muse-uid="U1918">
+
+                                                        <!-- content -->
+
+                                                        <!-- m_editable region-id="editable-static-tag-U1918" template="index.html" data-type="html" data-ice-options="disableImageResize,none,clickable" -->
+
+                                                        <p id="u1918-3"><span id="u1918">CROSSOVER/VENTURE </span><span id="u1918-2">INVESTMENTS</span>
+
+                                                        </p>
+
+                                                        <!-- /m_editable -->
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="popup_anchor">
+
+                                        <div class="popup_element Thumb clearfix" id="pu4480">
+
+                                            <!-- group -->
+
+                                            <div class="popup_anchor">
+
+                                                <div class="popup_element clearfix" id="u4480">
+
+                                                    <!-- group -->
+
+                                                    <div class="clearfix grpelem" id="u4482-6" data-muse-uid="U4482">
+
+                                                        <!-- content -->
+
+                                                        <!-- m_editable region-id="editable-static-tag-U4482" template="index.html" data-type="html" data-ice-options="disableImageResize,none,clickable" -->
+
+                                                        <p id="u4482-2">INVESTMENTS</p>
+
+                                                        <p id="u4482-4">ACQUIRED/IPO'D</p>
+
+                                                        <!-- /m_editable -->
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="popup_anchor">
+
+                                        <div class="popup_element Thumb clearfix" id="pu4254">
+
+                                            <!-- group -->
+
+                                            <div class="popup_anchor">
+
+                                                <div class="popup_element clearfix" id="u4254">
+
+                                                    <!-- group -->
+
+                                                    <div class="clearfix grpelem" id="u4256-7" data-muse-uid="U4256">
+
+                                                        <!-- content -->
+
+                                                        <!-- m_editable region-id="editable-static-tag-U4256" template="index.html" data-type="html" data-ice-options="disableImageResize,none,clickable" -->
+
+                                                        <p id="u4256-5"><span id="u4256">INVESTMENT</span><span id="u4256-4"><br>THEMES</span>
+
+                                                        </p>
+
+                                                        <!-- /m_editable -->
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- none box -->
+
+                                <div class="popup_anchor" id="u1919popup">
+
+                                    <div style="width: 0px; height: 0px;" class="ContainerGroup clearfix" id="u1919">
+
+                                        <!-- stack box -->
+
+                                        <div class="Container clearfix grpelem wp-panel wp-panel-active" id="u1922">
+
+                                            <!-- column -->
+
+
+
+                                            <div class="row">
+
+
+
+                                                <div class="col-xs-12">
+
+                                                    <div class="first-tab-content">
+
+                                                        <div class="static-button"><center>CURRENT INVESTMENTS:</center></div>
+
+                                                        
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.arvinas.com/about/leadership"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Arvinas.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://audentestx.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/AudentesTherapeutics.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.calhounvision.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/CalhounVision.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.calimmune.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Callimune.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href=""><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Carnot200x100-01.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://clementiapharma.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Clementia.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://dignifytherapeutics.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Dignify-Therapeutics.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.g1therapeutics.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/G1Therapeutics.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://intarcia.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Intarcia.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://kalarx.com"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Kala-Pharmaceuticals.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.kalvista.com"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/KalVista-Pharmaceuticals.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.lantostechnologies.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Lantos-Technologies.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href=""><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/LifeSci-Pharma.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.merus.nl/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Merus.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.mitraspan-inc.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/MitraSpan.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://modernatx.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Moderna-Messenger-Therapeutics.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://periphagen.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/PeriphaGen.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.pilofocus.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/PiloFocus.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.precisionbiosciences.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Precision-Biosciences.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href=" http://www.protagonist-inc.com"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Protagonist-Therapeutics.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.qvella.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Qvella.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.rapharma.com"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Ra-Pharmaceuticals.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href=""><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Reneo-Pharmaceuticals.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://shockwavemedical.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Shockwave.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.tarisbiomedical.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/TarisBiomedical.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.tunitastherapeutics.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Tunitas.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href=""><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2016/03/Whiteswell.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.ziplinemedical.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/ZipLine-Medical.png"></a></div>
+
+                                                                
+                                                        <p>Information listed is as of<b> May 1, 2016</b>. References, either general or specific, to securities and/or issuers are for illustrative purposes only and are not intended to be, and should not be interpreted as, recommendations to purchase or sell such securities.   The earliest illustrated crossover/venture investment occurred in February 2012.  Due to confidentiality restrictions, investments in certain companies are not illustrated.   RA Capital Management, LLC makes no representations, and it should not be assumed, that past investment selection is necessarily reflective of future investment selection or performance.</p>
+
+                                                    </div>
+
+                                                </div>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+
+                                        <div style="display: none;" class="Container clearfix grpelem wp-panel" id="u4428">
+
+                                            <!-- column -->
+
+
+
+                                            <div class="row">
+
+
+
+                                                <div class="col-xs-12">
+
+                                                    <div class="first-tab-content">
+
+                                                        
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.aclaristx.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Aclaris-Therapeutics1.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.aegleabio.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Aeglea-Biotherapeutics.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.aimmune.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Aimmune-Therapeutics2.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.ascendispharma.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Acendis-Pharma.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://avexisbio.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Avexis2.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.bellicum.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Bellicum-Pharmaceuticals.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.bluebirdbio.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/BlueBird-Bio.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.blueprintmedicines.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Blueprint-Medicines.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.cidara.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Cidara-Therapeutics.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://ir.acorda.com/investors/investor-news/investor-news-details/2014/Acorda-Therapeutics-to-Acquire-Civitas-Therapeutics/default.aspx"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Civitas-Therapeutics.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.coherus.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Coherus-Biosciences.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.collegiumpharma.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Collegium-Pharmaceutical.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.dicerna.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Dicerna-Pharmaceuticals.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://dimensiontx.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Dimension-Therapeutics.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.eigerbio.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/EigerBiopharmaceuticals.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.globalbloodtx.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/GlobalBlood-Therapeutics.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="https://junotherapeutics.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Juno-Therapeutics.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://shire.com/shireplc/en/investors/investorsnews/irshirenews?id=950"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Lumena-Phamaceuticals.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://natera.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Natera.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.nivalis.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Nivalis-Therapeutics1.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.ovascience.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/OvaScience.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://pronai.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/ProNAi.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.serestherapeutics.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Seres.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.t2biosystems.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/T2-Biosystems.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.versartis.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Versartis.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://wavelifesciences.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/03/Wave-Life-Sciences.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.zafgen.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/Zafgen.png"></a></div>
+
+                                                                
+                                                                <div class="parent-div-img"><a target="_blank" href="http://www.zspharma.com/"><img class="img-responsive" src="http://www.racap.com/wp-content/uploads/2015/05/ZSPharma.png"></a></div>
+
+                                                                				
+
+                                                        <p style="margin-top: 15px;">Information listed is as of<b> May 1, 2016</b>. References, either general or specific, to securities and/or issuers are for illustrative purposes only and are not intended to be, and should not be interpreted as, recommendations to purchase or sell such securities.   The earliest illustrated crossover/venture investment occurred in February 2012.  Due to confidentiality restrictions, investments in certain companies are not illustrated.   RA Capital Management, LLC makes no representations, and it should not be assumed, that past investment selection is necessarily reflective of future investment selection or performance.</p>
+
+                                                        <div class="clearfix"></div>
+
+                                                    </div>
+
+                                                </div>
+
+
+
+
+
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <div style="display: none;" class="Container clearfix grpelem wp-panel" id="u4208">
+
+                                            <!-- column -->
+
+
+
+                                            <div class="row">
+
+                                                <div class="third-tab-content">
+
+                                                    <p>RA Capital has a particular interest in funding innovation that contributes to the following healthcare themes, which converge on a higher quality and more cost-effective delivery of significant healthcare outcomes. These investment themes may change in the future.</p>
+
+
+
+                                                    <div class="acc-container">
+
+
+
+                                                        
+
+
+                                                            
+                                                                <div class="accc">							  
+
+                                                                    <div class="acc-btn">
+
+                                                                        <h1>PREVENTION & CURES</h1>
+
+                                                                    </div>
+
+                                                                    <div class="acc-content">
+
+                                                                        <div class="acc-content-inner">
+
+                                                                            <p>Diagnostics and interventions that are demonstrated to prevent and/or cure disease are of greater value than those that ameliorate symptoms and delay disease progression, especially if only incrementally. We are interested in ambitious objectives, hard outcomes measures, and proper controls.</p>
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            
+                                                                <div class="accc">							  
+
+                                                                    <div class="acc-btn">
+
+                                                                        <h1>COST-EFFECTIVE DIAGNOSTICS & INTERVENTIONS</h1>
+
+                                                                    </div>
+
+                                                                    <div class="acc-content">
+
+                                                                        <div class="acc-content-inner">
+
+                                                                            <p>Most of the new products coming to market in the next few years will have to compete in a world that increasingly values cost effectiveness. We are interested in seeing data from Phase 2 and Phase 3 clinical trials that inform models of cost effectiveness, especially with endpoints that are recognized by private and public payors.</p>
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            
+                                                                <div class="accc">							  
+
+                                                                    <div class="acc-btn">
+
+                                                                        <h1>GENETIC TESTING & PERSONALIZED MEDICINE</h1>
+
+                                                                    </div>
+
+                                                                    <div class="acc-content">
+
+                                                                        <div class="acc-content-inner">
+
+                                                                            <p>We are looking for companies with low-cost technologies that have a competitive advantage in genetic testing and/or other diagnostics, including exclusive access to relevant, well-curated patient samples and healthcare outcomes. We have particular interest in a number of current niche areas, including carrier tests, prenatal tests, and the combination of pre-implantation diagnosis/IVF, because we believe these technologies will increase in importance and availability with the advent of low-cost sequencing.</p>
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            
+                                                                <div class="accc">							  
+
+                                                                    <div class="acc-btn">
+
+                                                                        <h1>PATIENT/PHYSICIAN CONVENIENCE</h1>
+
+                                                                    </div>
+
+                                                                    <div class="acc-content">
+
+                                                                        <div class="acc-content-inner">
+
+                                                                            <p>There will continue to be a need for technological improvements that meaningfully transform how healthcare is delivered, converting a treatment that would normally require a hospital admission into an out-patient procedure, allowing a patient to take an oral pill or self-administer a subcutaneous injection at home instead of having to see a physician to receive an IV infusion, or delivering a rapid diagnostic test at the point of care instead of requiring a second appointment to discuss the results. However, until we see more common sense in the way in which physicians and hospitals are compensated for their services and patients are billed for their utilization, companies will need to remain mindful of the myriad ways in which the healthcare system’s incentive schemes cause counterintuitive practices to remain entrenched (e.g., in the US, physicians in private practice have a financial incentive, a.k.a. “ASP+6%”, to prescribe expensive IV-administered drugs and therefore are disincentivized from switching to a cheaper drug or a more convenience subcutaneous form of the same drug for which there may not be the same incentive).</p>
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            
+                                                                <div class="accc">							  
+
+                                                                    <div class="acc-btn">
+
+                                                                        <h1>SMALL-MOLECULE REPLACEMENTS FOR BIOLOGICS</h1>
+
+                                                                    </div>
+
+                                                                    <div class="acc-content">
+
+                                                                        <div class="acc-content-inner">
+
+                                                                            <p>Although it is clear from the FDA guidance documents on biosimilars that there will be high barriers to allowing pharmacy substitution of biologics with lower cost biosimilars/biogenerics and therefore biologics are unlikely to ever be commoditized in the same way that small-molecules are when patents expire, it is hard to believe that the global healthcare system will be able to indefinitely tolerate biologic drug cost inflation. We are interested in small-molecule drugs that can deliver comparable efficacy/safety to biologics, ideally with greater convenience to patients (e.g., oral pills vs. injectables). We expect that, all else being equal, public and private payors will favor such “genericizable” small-molecule drugs over “ungenericizable” biologics.</p>
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            
+                                                        
+
+
+
+
+                                                    </div>
+
+
+
+                                                </div>
+
+                                            </div>
+
+
+
+
+
+                                            <!--ul-->
+
+
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</section>
+
+
+
+<div class="slider-strip border-bottom-strip"></div>
+
+<section id="slide-8" class="homeSlide">
+        <!--a class="grey-arrow" href="#contact"><img src="http://www.racap.com/wp-content/themes/racap/img/down-grey.png" /></a-->
+    <div class="bcg">
+
+        <div class="slide-8-bg-overlay">
+
+
+
+            <div class="container">
+
+                <div class="row">
+
+
+
+                    <div class="col-md-4 col-sm-5 col-xs-12">
+
+                        <div class="left-box-section transition-effect-leftbox">
+
+                            <a href="#contact"><img src="http://www.racap.com/wp-content/themes/racap/img/racap-new-logo.png"></a>
+
+                            <h1><p><strong><a href="https://www.google.co.in/maps/place/20+Park+Plaza,+Boston,+MA+02116,+USA/@42.351342,-71.0689653,17z/data=!3m1!4b1!4m2!3m1!1s0x89e37a743474c963:0x8cc9aed2b5e94d14" target="_blank">20</a></strong><a href="https://www.google.co.in/maps/place/20+Park+Plaza,+Boston,+MA+02116,+USA/@42.351342,-71.0689653,17z/data=!3m1!4b1!4m2!3m1!1s0x89e37a743474c963:0x8cc9aed2b5e94d14" target="_blank"> PARK PLAZA BOSTON, MA 02116</a></p>
+</h1>
+
+                            <span>T: 617.778.2500</span>
+
+                        </div>
+
+                        <!--div class="bottom-box-slide4">
+
+                            <a href="#slide-1"><img src="http://www.racap.com/wp-content/themes/racap/img/racap_1_notag_white.png"></a>
+
+                        </div-->
+
+                    </div>
+
+
+
+                    <div class="col-md-8 col-sm-7 col-xs-12">
+
+                        <div class="right-box-section">
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="slider-strip"></div>
+<section id="contact" class="homeSlide">
+
+    <div class="bcg">
+
+
+
+        <div class="container">
+
+            <div class="row">
+
+
+
+                <div class="col-md-4 col-sm-5 col-xs-12">
+
+                    <div class="left-box-section">
+
+                        <h1>CONTACT US</h1>
+
+                        <p><p>RA CAPITAL MANAGEMENT, LLC<br />
+<a href="https://www.google.co.in/maps/place/20+Park+Plaza,+Boston,+MA+02116,+USA/@42.351342,-71.0689653,17z/data=!3m1!4b1!4m2!3m1!1s0x89e37a743474c963:0x8cc9aed2b5e94d14" target="_blank">20 Park Plaza, Suite 1200<br />
+Boston, MA 02116</a></p>
+</p>
+
+                        <span><strong>T</strong>: 617.778.2500<br><p><a href="#">www.RACAP.com</a><p></span>
+
+                        <a href="#slide-1"><small>TOP<img src="http://www.racap.com/wp-content/themes/racap/img/arrow-grey.png"></small></a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-8 col-sm-7 col-xs-12">
+
+                    <div class="right-box-section right-div-section-contact">
+
+
+
+                        <div class="PamphletWidget clearfix grpelem" id="pamphletu1860">
+
+
+
+                            <div class="ThumbGroup clearfix grpelem" id="u1863">
+
+                                <!-- none box -->
+
+                                <div class="popup_anchor">
+
+                                    <div class="popup_element Thumb clearfix wp-tab-active PamphletThumbSelected" id="pu1880">
+
+                                        <!-- group -->
+
+                                        <div class="popup_anchor">
+
+                                            <div class="popup_element clearfix" id="u1880">
+
+                                                <!-- group -->
+
+                                                <div class="clearfix grpelem" id="u1881-4" data-muse-uid="U1881">
+
+                                                    <!-- content -->
+
+                                                    <!-- m_editable region-id="editable-static-tag-U1881" template="index.html" data-type="html" data-ice-options="disableImageResize,none,clickable" -->
+
+                                                    <p>CONTACT</p>
+
+                                                    <!-- /m_editable -->
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="popup_anchor">
+
+                                    <div class="popup_element Thumb clearfix" id="pu2029">
+
+                                        <!-- group -->
+
+                                        <div class="popup_anchor">
+
+                                            <div class="popup_element clearfix" id="u2029">
+
+                                                <!-- group -->
+
+                                                <div class="clearfix grpelem" id="u2031-4" data-muse-uid="U2031">
+
+                                                    <!-- content -->
+
+                                                    <!-- m_editable region-id="editable-static-tag-U2031" template="index.html" data-type="html" data-ice-options="disableImageResize,none,clickable" -->
+
+                                                    <p>CAREERS</p>
+
+                                                    <!-- /m_editable -->
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- none box -->
+
+                            <div class="popup_anchor" id="u1884popup">
+
+                                <div style="width: 0px; height: 0px;" class="ContainerGroup clearfix" id="u1884">
+
+                                    <!-- stack box -->
+
+                                    <div class="Container clearfix grpelem wp-panel wp-panel-active" id="u1899">
+
+                                        <!-- group -->
+
+                                        <div class="ts-Default-Link-Style--copy clearfix grpelem" id="u2061-40" data-muse-uid="U2061">
+
+                                            <!-- content -->
+
+                                            <!-- m_editable region-id="editable-static-tag-U2061" template="index.html" data-type="html" data-ice-options="disableImageResize,none" -->
+
+
+
+                                            <p id="u2061-2">If you are with a healthcare or<br />
+<span style="line-height: 1.5;">life-science company, please contact:</span></p>
+<p id="u2061-20"><span id="u2061-9">KATHRYN ROY</span><span id="u2061-12">,<br />
+</span><span id="u2061-13">Executive Assistant</span> <span id="u2061-15"><br />
+</span> <span id="u2061-16">P:</span><span id="u2061-17"> 617.778.2558  |  </span> <a class="nonblock" href="mailto:kroy@racap.com"><span id="u2061-18">kroy@racap.com</span> </a></p>
+
+                                            <p><span id="u2061-24">If you are interested in joining<br />
+RA Capital, please contact:</span><span id="u2061-26"><br />
+</span> <span id="u2061-27">STEPHANIE MOORE</span><span id="u2061-30">,<br />
+</span><span id="u2061-31">Director of Human Resources</span> <span id="u2061-33"><br />
+</span><span id="u2061-34">P:</span><span id="u2061-35"> 617.778.2587  |  </span> <a class="nonblock" href="mailto:skmoore@racap.com"><span id="u2061-36">skmoore@racap.com</span></a></p>
+<div class="clear"></div>
+<p id="u2061-38"><a href="https://www.linkedin.com/profile/view?id=88685736&amp;amp;authType=NAME_SEARCH&amp;amp;authToken=tlTI&amp;amp;locale=en_US&amp;amp;trk=tyah2&amp;amp;trkInfo=idx%3A2-1-2%2CtarId%3A1423841317649%2Ctas%3Ast"><img class="alignnone size-full wp-image-84" src="http://www.racap.com/wp-content/uploads/2015/03/linkedin.jpg" alt="linkedin" width="20" height="20" data-id="84" /></a></p>
+
+
+
+
+
+                                            <!-- /m_editable -->
+
+                                        </div>
+
+
+
+                                        <div class="ts-Default-Link-Style--copy clearfix grpelem" id="u4407-38" data-muse-uid="U4407">
+
+                                            <!-- content -->
+
+                                            <!-- m_editable region-id="editable-static-tag-U4407" template="index.html" data-type="html" data-ice-options="disableImageResize,none" -->
+
+                                            <p id="u4407-18"><span id="u4407-4">For investor relations,<br />
+please contact: </span><span id="u4407-6"><br />
+</span><span id="u4407-7">MICHAEL CALORE</span><span id="u4407-10">,<br />
+</span><span id="u4407-11">Director of Investor Relations</span> <span id="u4407-13"><br />
+</span><span id="u4407-14">P:</span> <span id="u4407-15"> 617.778.2518  |  </span> <a class="nonblock" href="mailto:mcalore@racap.com"><span id="u4407-16">mcalore@racap.com</span> </a></p>
+
+                                            
+
+
+
+
+                                            <!-- /m_editable -->
+
+                                        </div>
+
+                                    </div>
+
+                                    <div style="display: none;" class="Container clearfix grpelem wp-panel" id="u2027">
+
+                                        <!-- group -->
+
+                                        <div class="clearfix grpelem" id="u2062-10" data-muse-uid="U2062">
+
+                                            <!-- content -->
+
+                                            <!-- m_editable region-id="editable-static-tag-U2062" template="index.html" data-type="html" data-ice-options="disableImageResize,none" -->
+
+                                            <p id="u2062-2">We welcome inquiries from people interested in joining the RA Capital team. From time to time we may post specific positions that we are looking to fill, but more often we will create positions for the right people.</p>
+<p id="u2062-4">Senior executives interested in a position with one of our portfolio companies are also welcome to submit their resume and description of their desired position.</p>
+<p class="ts-Default-Link-Style--copy">Please contact Stephanie Moore at <span id="u2062-6"><a class="nonblock" href="mailto:skmoore@racap.com">skmoore@racap.com.</a> </span><a href="https://www.linkedin.com/profile/view?id=88685736&amp;amp;authType=NAME_SEARCH&amp;amp;authToken=tlTI&amp;amp;locale=en_US&amp;amp;trk=tyah2&amp;amp;trkInfo=idx%3A2-1-2%2CtarId%3A1423841317649%2Ctas%3Ast"><img class="alignnone size-full wp-image-84" src="http://www.racap.com/wp-content/uploads/2015/03/linkedin.jpg" alt="linkedin" width="20" height="20" data-id="84" /></a></p>
+
+
+
+                                            <!-- /m_editable -->
+
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+</section>
+
+
+
+<div class="slider-strip"></div>
+
+<section id="slide-10" class="homeSlide">
+        <!--a class="grey-arrow" href="#outreach"><img src="http://www.racap.com/wp-content/themes/racap/img/down-grey.png" /></a-->
+    <div class="bcg">
+
+        <div class="slide-10-bg-overlay">
+            <div class="feature-inner-part5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 feature-inner5">
+                            <div class="feature-inner-conent5">
+                                <h1>"WE ARE PRIVILEGED TO BE TAUGHT EVERYDAY BY THE GREATEST SCIENTIFIC MINDS IN THE INDUSTRY AND ACADEMIA."</h1>
+                                <small><p>Our curiosity and work drive us to restore context to data and knowledge, from which emerge remarkable insights, each one potentially inspiring investment in outstanding people and technologies. But to have the greatest positive social impact, we must share those insights in an effort to enrich discourse and spark collaboration among all stakeholders, including patients, physicians, innovators, researchers, policy makers, and the next generation searching for inspiration.”</p>
+</small>
+                                <span>PETER KOLCHINSKY, </span>
+                                <small>MANAGING DIRECTOR & PORTFOLIO MANAGER</small>
+
+                                <a class="grey-arrow" href="#outreach"><img src="http://www.racap.com/wp-content/themes/racap/img/down-grey.png" /></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="transform-text">
+
+                        <p>EVERGLADES</p><small>NATIONAL PARK</small><span>FLORIDA</span>                    </div>
+                </div>
+
+            </div>
+
+            <!--div class="container">
+
+                <div class="row">
+
+
+
+                    <div class="col-md-4 col-sm-5 col-xs-12">
+
+                        <div class="left-box-section transition-effect-leftbox">
+
+                            <h1></h1>
+
+                            <p>
+                            </p>
+
+                            <span></span>
+
+                            <small></small>
+
+
+
+                        </div>
+
+                        <div class="bottom-box-slide4">
+
+                            <a href="#slide-1"><img src="/img/racap_1_notag_white.png"></a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-8 col-sm-7 col-xs-12">
+
+                        <div class="right-box-section">
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div-->
+
+
+
+            <!--div class="transform-text">
+
+            
+            </div-->
+
+
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="slider-strip"></div>
+
+<section id="outreach" class="">
+
+    <div class="bcg">
+
+
+
+        <div class="container">
+
+            <div class="row">
+
+
+
+                <div class="col-md-4 col-sm-5 col-xs-12">
+
+                    <div class="left-box-section">
+
+                        <h1>OUTREACH</h1>
+
+                        <p><p>From class rooms to board rooms, we believe in sharing what we have learned from thousands of case studies about clinical trials, product development, and business/finance strategy with our portfolio companies and, through our outreach efforts, with the broader healthcare and life science community.</p>
+</p>
+
+                        <a href="#slide-1"><small>TOP<img src="http://www.racap.com/wp-content/themes/racap/img/arrow-grey.png"></small></a>
+
+                    </div>
+
+                </div>
+
+                <div style="display:none;">
+                    <div id="popup_content">
+                        <div id="popup_bg">
+                            <a class="closepop" href="#">&times;</a>
+                            <h3>RA CAPITAL <span style="font-weight: bold;">PUBLICATIONS</span></h3>
+<h4>BEFORE ACCESSING THE PUBLICATIONS PAGE, THE READER MUST REVIEW AND ACKNOWLEDGE THE FOLLOWING TERMS AND CONDITIONS:</h4>
+<p>Publications are provided for informational purposes only and do not constitute an offer to sell, a solicitation to buy, or a recommendation for any security, nor do they constitute an offer to provide investment advisory or other services by RA Capital Management, LLC (&#8220;RA Capital&#8221;).</p>
+<p>The content of the publications neither constitutes investment advice nor offers any opinion with respect to the suitability of any security. Views expressed in the publications should not be taken as advice to buy, sell or hold any security or as an endorsement of any security or company; such views were formed based upon information, believed to be reliable, that was available at the time the publications were written.</p>
+<p>Strategies and companies referenced in the publications may not be suitable for all investors. Accounts managed by RA Capital may invest in certain companies referenced in the publications; however, RA Capital makes no guarantees as to accuracy or completeness of views expressed in the publications.</p>
+<p>More specifically, views expressed in the publications are subject to change, and may have become unreliable for various reasons, including changes in market conditions or economic circumstances. By accessing the publications, the reader agrees that he/she will not copy, reproduce, republish, upload, post, transmit, alter, or distribute the publications in any way that is inconsistent with the purposes for which they are offered, without the prior written consent of RA Capital.</p>
+<p style="color: #02283b;">By clicking &#8220;I Agree&#8221;, you acknowledge the foregoing terms and conditions.</p>
+<p><a id="agree" href="#">I AGREE</a> <a id="disagree" href="#">CANCEL</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8 col-sm-7 col-xs-12">
+
+                    <div class="right-box-section">
+                        <a id="general-content" class="general-btn active">GENERAL</a>
+                        <a href="#popup_content" id="publication-content" class="general-btn">PUBLICATIONS</a>
+                        <div class="outreach-tabs general-content active">
+                            <p id="u5447-2">The biotechnology industry is a vibrant community of researchers, business executives, and investors often charting new territory in the pursuit of innovation. After many years of investing in both public and private companies across the therapeutic, diagnostic, and device landscapes, our team has come to recognize some of the patterns of success and failure. We believe in openly contributing what we know; we have shared our perspective on valuation methods, business models, clinical trial design, and other best practices gleaned from hundreds of case studies in boardrooms, classrooms, conferences, and articles.</p>
+<p id="u5447-4">For example, we have helped entrepreneurs identify comparables for their businesses, guided management teams in prioritizing their development programs, helped companies gauge when they might be IPO-ready, and informed companies’ decision about how much capital to raise, when to raise it, which banks to work with, and which investors to talk to.</p>
+<p id="u5447-6">On occasion, we have also had the pleasure of speaking with students near and far (University of Helsinki currently holds the record/tops the charts/is the current leader for furthest distance). We typically discuss trends in innovation, how we invest, and risks in the healthcare and life science industries; we hope they remember us when they someday launch companies and are looking for capital.</p>
+<p>We do our best to make time for outreach and welcome all queries –<br />
+contact Katie Maher at <strong style="line-height: 1.5;"><a href="#">kmaher@racap.com</a></strong><span style="line-height: 1.5;">.</span></p>
+                        </div>
+                        <div class="outreach-tabs publication-content">
+                            <p><a href="http://bit.ly/1xm98R3" target="_blank">Hepatitis C commercial game theory<br />
+</a>Xconomy |  Jan 2015</p>
+<p><a href="http://bit.ly/14ukUNU" target="_blank">Rethinking venture philanthropy after the Kalydeco windfall<br />
+</a>Xconomy | Dec 2014</p>
+<p><a href="http://bit.ly/1cPtruP" target="_blank">How to save $200 billion and cure hepatitis C<br />
+</a>Xconomy | Jul 2013</p>
+<p><a href="http://www.racap.com/wp-content/uploads/2015/07/SolutionsDevelopment_IV1209_web-2.pdf" target="_blank">Solution Development: a model for structuring biotechs and developing better drugs<br />
+</a>IN VIVO | Sep 2012</p>
+<p><a href="http://www.racap.com/wp-content/uploads/2015/07/LastingPeace_IV1107_web-2.pdf" target="_blank">How to create a lasting peace between biotech management, shareholders, and employees<br />
+</a>IN VIVO | Jul/Aug 2011</p>
+<p>&nbsp;</p>
+<p style="font-size: 18px;"><strong>PUBLISHED INTERVIEWS</strong></p>
+<p><a href="http://www.racap.com/wp-content/uploads/2016/02/022216_Finance_InvestingUpstream.pdf" target="_blank">Investing Upstream<br />
+</a>BioCentury | Feb 2016</p>
+<p><a href="http://www.racap.com/wp-content/uploads/2016/01/RA-Institutional-Investor.pdf" target="_blank">Investing in the Health Care Revolution<br />
+</a>Institutional Investor |  Jan 2016</p>
+<p><a href="http://www.racap.com/wp-content/uploads/2015/12/AlphaQ_122015.pdf" target="_blank">Biotech and Innovation:<br />
+James Williams interviews Peter Kolchinsky of RA Capital Management<br />
+</a>AlphaQ |  Dec 2015</p>
+<p><a href="http://www.partnering360.com/insight/showroom/id/656" target="_blank">RA Capital: Flexibility builds innovation<br />
+</a>Partnering News  |  Sep 2015</p>
+<p><a href="http://www.racap.com/wp-content/uploads/2015/03/FINalternatives_RACapital.pdf" target="_blank">Q&amp;A: Biotech investing with crossover fund RA Capital </a><a href="http://www.partnering360.com/insight/showroom/id/656" target="_blank"><br />
+</a>FINalternatives |  Sep 2015</p>
+<p>&nbsp;</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<script src="http://www.racap.com/wp-content/themes/racap/js/about-tab-js.js"></script>
+<section id="secoond-footer">
+			<div class="container">
+			<div class="row">
+			
+			
+			<div class="col-md-6">
+			<div class="logo-footer">
+			<a href="http://www.racap.com"><aside id="widget_sp_image-2" class="widget widget_sp_image"><a href="/" id="" target="_self" class="widget_sp_image-image-link" title="" rel=""><img alt="" class="attachment-0x0" style="max-width: 100%;" src="http://www.racap.com/wp-content/uploads/2015/09/racap-new-logo.png" /></a></aside></a>
+			<img class="tagline-logo" src="http://www.racap.com/wp-content/themes/racap/img/f-logo-without-tagline.png">
+			
+			</div>
+			</div>
+			
+			<div class="col-md-3 about-menu">
+			<div class="footer-menu">
+			<aside id="advanced_menu-2" class="widget widget_advanced_menu"><h3 class="widget-title">Contact Us:</h3><div class="menu-contact-us-container"><ul id="menu-contact-us" class="menu"><li id="menu-item-75" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-75"><a href="mailto:kroy@racap.com">General</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-76"><a href="mailto:mcalore@racap.com">Investors</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-77"><a href="mailto:skmoore@racap.com">Careers</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-78"><a href="mailto:adonner@racap.com">Media</a></li>
+</ul></div></aside>			</div>
+			</div>
+			
+			<div class="col-md-3 contact-menu">
+			<div class="footer-menu">
+			<aside id="advanced_menu-3" class="widget widget_advanced_menu"><h3 class="widget-title">About us:</h3><div class="menu-about-us-container"><ul id="menu-about-us" class="menu"><li id="menu-item-79" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-79"><a href="#section-about">Our values</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-80"><a href="#slide-5">Team</a></li>
+<li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-81"><a href="#slide-7">Portfolio</a></li>
+</ul></div></aside>			</div>
+			</div>
+			
+			</div>
+			</div>
+			</section>
+			
+			<div class="clear"></div>
+			
+			<section id="footer">
+			<div class="container">
+			<div class="row">
+			<aside id="text-2" class="widget widget_text">			<div class="textwidget"><p><p style="font-size:10px"><b>© Copyright 2001-2016 RA Capital Management, LLC    </b>  This website is for informational purposes only and does not constitute an offer to sell, a solicitation to buy, or a recommendation for any security; nor does it constitute an offer to provide investment advisory or other services by RA Capital Management, LLC ("RA"). Nothing contained on the website constitutes investment advice or offers any opinion with respect to the suitability of any security, and the views expressed on this website should not be taken as advice to buy, sell, or hold any security or as an endorsement of any security or company. In preparing the information contained in this website, RA has not taken into account the investment needs, objectives, and financial circumstances of any particular investor, and investments and companies referenced may not be suitable for all investors. Any views expressed on this website by RA were prepared based upon information, believed to be reliable, available to it at the time such views were written. RA Capital makes no guarantees as to their accuracy or completeness. All information is subject to change and may quickly become unreliable for various reasons, including changes in market conditions or economic circumstances. By accessing this website, the reader agrees that he/she not copy, reproduce, republish, upload, post, transmit, alter, or distribute in any way material from this website in any manner inconsistent with the purposes for which it is offered without the prior written consent of RA.</p></div>
+		</aside>			
+			</div>
+			</div>
+			</section>
+		    
+</main>
+
+
+        <script src="http://www.racap.com/wp-content/themes/racap/js/imagesloaded.js"></script>
+        <script src="http://www.racap.com/wp-content/themes/racap/js/skrollr.js"></script>
+        <script src="http://www.racap.com/wp-content/themes/racap/js/_main.js"></script>
+		
+		<!-- JS includes -->
+        
+	
+		<script src="http://www.racap.com/wp-content/themes/racap/js/jquery-1.js" type="text/javascript"></script>
+		<script src="http://www.racap.com/wp-content/themes/racap/js/tabs_jquery.js" type="text/javascript"></script>
+		<script src="http://www.racap.com/wp-content/themes/racap/js/jquery.fullscreennav.min.js"></script>
+		
+				<script>
+ $(document).ready(function () {
+ var translating = "";
+ if(translating == 'true/'){
+  $(".tab_content:first").hide();
+  $(".about-us-accordion ul.tabs li.tab_first").removeClass("active");
+ $('.tab_container #tab3').show();
+    $('.about-us-accordion ul.tabs li.tab_last').addClass("active");
+	
+ }
+});
+</script>
+		<script>
+			$(function() {
+				$(".nav_ipad").fullScreenNav();
+			});
+		</script>
+  
+  <script type='text/javascript' src='http://www.racap.com/wp-content/themes/racap/js/skip-link-focus-fix.js?ver=20141010'></script>
+<script type='text/javascript' src='http://www.racap.com/wp-content/themes/racap/js/jquery.colorbox-min.js?ver=20141010'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand child menu<\/span>","collapse":"<span class=\"screen-reader-text\">collapse child menu<\/span>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.racap.com/wp-content/themes/racap/js/functions.js?ver=20141212'></script>
+<script type='text/javascript' src='http://www.racap.com/wp-content/plugins/cyclone-slider-2/libs/cycle2/jquery.cycle2.min.js?ver=2.11.0'></script>
+<script type='text/javascript' src='http://www.racap.com/wp-content/plugins/cyclone-slider-2/libs/cycle2/jquery.cycle2.carousel.min.js?ver=2.11.0'></script>
+<script type='text/javascript' src='http://www.racap.com/wp-content/plugins/cyclone-slider-2/libs/cycle2/jquery.cycle2.swipe.min.js?ver=2.11.0'></script>
+<script type='text/javascript' src='http://www.racap.com/wp-content/plugins/cyclone-slider-2/libs/cycle2/jquery.cycle2.tile.min.js?ver=2.11.0'></script>
+<script type='text/javascript' src='http://www.racap.com/wp-content/plugins/cyclone-slider-2/libs/cycle2/jquery.cycle2.video.min.js?ver=2.11.0'></script>
+<script type='text/javascript' src='http://www.racap.com/wp-content/plugins/cyclone-slider-2/templates/dark/script.js?ver=2.11.0'></script>
+<script type='text/javascript' src='http://www.racap.com/wp-content/plugins/cyclone-slider-2/templates/thumbnails/script.js?ver=2.11.0'></script>
+<script type='text/javascript' src='http://www.racap.com/wp-content/plugins/cyclone-slider-2/js/client.js?ver=2.11.0'></script>
+<script type='text/javascript' src='http://www.racap.com/wp-includes/js/wp-embed.min.js?ver=4.5.2'></script>
+  </body>
+  </html>
